@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data class="NewContactNotifyItemBinding">
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="notifyBean"
+            type="com.lshl.db.bean.HxNewContactNotifyBean"/>
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/iv_contact_avatar"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:scaleType="fitXY"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="13dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="@{notifyBean.inviteName??notifyBean.hxId}"
+                    android:textColor="@color/textBlackColor"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:id="@+id/tv_reason"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text=""
+                    android:textSize="12sp"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:text="@{notifyBean.disposeRequest}"
+                android:visibility="@{notifyBean.isDispose ? View.VISIBLE : View.GONE}"/>
+
+            <TextView
+                android:id="@+id/tv_agree"
+                style="@style/small_btn"
+                android:layout_marginLeft="7dp"
+                android:background="@drawable/bg_solid_gray"
+                android:text="同意"
+                android:textColor="@color/textBlackColor"
+                android:visibility="@{notifyBean.isDispose ? View.GONE : View.VISIBLE}"/>
+
+        </LinearLayout>
+
+        <View style="@style/gray_line"/>
+    </LinearLayout>
+</layout>

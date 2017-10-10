@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:padding="5dp"
+        android:background="#fff"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/head_image"
+            android:scaleType="fitXY"
+            android:src="@mipmap/account_logo"
+            android:layout_width="70dp"
+            android:layout_height="70dp" />
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/name"
+                android:textColor="#333"
+                android:textSize="18sp"
+                android:text="兰州服务站"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/address"
+                android:layout_below="@id/name"
+                android:text="兰州城关区"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </RelativeLayout>
+        <ImageView
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_vector_right_go"
+            android:layout_width="30dp"
+            android:layout_height="60dp" />
+    </LinearLayout>
+</layout>

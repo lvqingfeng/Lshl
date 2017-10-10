@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_person_introduction"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.lshl.ui.me.activity.PersonIntroductionActivity">
+        <include layout="@layout/app_layout_title"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:background="@color/windowBackgroundColor"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <EditText
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/edit_text"
+
+                android:background="#fff"
+                android:maxLength="200"
+                android:gravity="start"
+                android:hint="个人简介200字以内"
+                android:layout_width="match_parent"
+                android:layout_height="120dp" />
+            <Button
+                android:id="@+id/button"
+                android:text="保   存"
+                style="@style/red_button" />
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_look_help_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.lshl.ui.appliance.activity.LookHelpListActivity">
+        <include layout="@layout/app_layout_title"/>
+        <View
+          style="@style/TenDpGrayView"/>
+       <FrameLayout
+           android:orientation="vertical"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+           <com.liaoinstan.springview.widget.SpringView
+               android:id="@+id/spring_view"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent">
+               <android.support.v7.widget.RecyclerView
+                   android:id="@+id/recycler_view"
+                   android:background="@color/windowBackgroundColor"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"/>
+           </com.liaoinstan.springview.widget.SpringView>
+           <android.support.design.widget.FloatingActionButton
+               android:id="@+id/btn_add"
+               android:layout_width="50dp"
+               android:layout_height="50dp"
+               android:layout_gravity="end|bottom"
+               android:layout_marginBottom="45dp"
+               android:layout_marginEnd="30dp"
+               android:layout_marginRight="30dp"
+               android:src="@drawable/ic_vector_add" />
+       </FrameLayout>
+    </LinearLayout>
+</layout>

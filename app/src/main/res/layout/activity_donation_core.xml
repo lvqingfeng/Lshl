@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="presenter"
+            type="com.lshl.ui.me.activity.DonationCoreActivity.Presenter"/>
+    </data>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_donation_core"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.lshl.ui.me.activity.DonationCoreActivity">
+
+        <include layout="@layout/app_layout_title"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:background="#fff"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="其他金额"
+                    android:background="#fff"
+                    android:padding="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <EditText
+                    android:background="#fff"
+                    android:id="@+id/money"
+                    android:padding="10dp"
+                    android:gravity="end"
+                    android:hint="￥"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <TextView
+                android:text="选择支付方式"
+                android:background="#e6e6e6"
+                android:textColor="@color/textBlackColor"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:onClick="@{()->presenter.chooseBank()}"
+                android:gravity="center_vertical"
+                android:drawableRight="@drawable/ic_vector_right_go"
+                android:text="银行卡支付"
+                android:textColor="@color/textBlackColor"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <View
+                style="@style/OneDpGrayView"/>
+            <TextView
+                android:onClick="@{()->presenter.chooseZhiFuBao()}"
+                android:gravity="center_vertical"
+                android:drawableRight="@drawable/ic_vector_right_go"
+                android:drawableLeft="@drawable/ic_vector_zhifubao"
+                android:textColor="@color/textBlackColor"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <View
+                style="@style/OneDpGrayView"/>
+            <TextView
+                android:onClick="@{()->presenter.chooseWeiXin()}"
+                android:gravity="center_vertical"
+                android:drawableRight="@drawable/ic_vector_right_go"
+                android:drawableLeft="@drawable/ic_vector_weixinzhifu"
+                android:textColor="@color/textBlackColor"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <View
+                style="@style/OneDpGrayView"/>
+
+            <Button
+                android:text="捐助"
+                android:textColor="#fff"
+                android:background="@drawable/bg_blue_btn"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/button2" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

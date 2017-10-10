@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="presenter"
+            type="com.lshl.ui.me.activity.JoinUnionActivity.Presenter"/>
+    </data>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/activity_join_union"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="30dp">
+        <include layout="@layout/app_layout_title"/>
+        <LinearLayout
+            android:paddingLeft="60dp"
+            android:paddingRight="60dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
+                android:layout_weight="2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp" />
+
+            <ImageView
+                android:scaleType="fitXY"
+                android:src="@mipmap/positive"
+                android:layout_weight="5"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:id="@+id/imageView3" />
+
+            <TextView
+                android:layout_weight="2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:id="@+id/textView2" />
+
+            <Button
+                android:id="@+id/btn_joinunion"
+                android:textColor="#fff"
+                android:text="加入联盟"
+                android:onClick="@{()->presenter.joinNuion()}"
+                android:textSize="20sp"
+                android:background="@drawable/bg_blue_btn"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp" />
+            <TextView
+                android:layout_weight="0.8"
+                android:layout_width="match_parent"
+                android:layout_height="0dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <Button
+                android:id="@+id/btn_join_describ"
+                android:text="简要概述"
+                android:background="@null"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="match_parent" />
+
+            <Button
+                android:text="功能介绍"
+                android:background="@null"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/btn_join_introduce" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

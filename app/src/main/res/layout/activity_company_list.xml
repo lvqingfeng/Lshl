@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_company_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.lshl.ui.appliance.activity.CompanyListActivity">
+        <include layout="@layout/app_layout_title"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:paddingBottom="5dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="5dp">
+
+            <TextView
+                android:gravity="center"
+                android:id="@+id/tv_search_go"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/bg_solid_brown"
+                android:paddingRight="8dp"
+                android:paddingLeft="8dp"
+                android:text="搜索"
+                android:textColor="@android:color/white" />
+
+            <EditText
+                android:id="@+id/edit_search_content"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_toLeftOf="@id/tv_search_go"
+                android:background="@drawable/bg_solid_dark_gray"
+                android:drawableLeft="@drawable/ic_vector_big_search"
+                android:maxLines="1"
+                android:padding="4dp"
+                android:textSize="14sp" />
+        </RelativeLayout>
+        <com.liaoinstan.springview.widget.SpringView
+            android:id="@+id/spring_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:background="@color/windowBackgroundColor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </com.liaoinstan.springview.widget.SpringView>
+    </LinearLayout>
+</layout>

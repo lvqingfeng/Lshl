@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://schemas.android.com/apk/res-auto">
+
+    <data class="TradeGoodsItemBinding">
+
+        <import type="java.lang.String" />
+
+        <import type="android.view.View" />
+
+        <import type="com.lshl.api.ApiClient" />
+
+        <variable
+            name="goodsBean"
+            type="com.lshl.bean.TradeGoodsListBean.ListBean" />
+
+        <variable
+            name="imageSize"
+            type="java.lang.Integer" />
+
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:layout_margin="5dp"
+            android:scaleType="centerCrop"
+            binding:defaultIcon="@{@drawable/account_logo}"
+            binding:imageLoad="@{ApiClient.getGoodsInfoImage(goodsBean.img)}" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:text="@{goodsBean.gd_goodname}"
+                    android:textColor="@color/textBlackColor"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_vector_top"
+                    android:visibility="@{goodsBean.top == 1 ? View.VISIBLE:View.GONE}" />
+            </LinearLayout>
+            <View
+                style="@style/weight_view"/>
+            <TextView
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:maxLines="2"
+                android:layout_height="wrap_content"
+                android:text="@{goodsBean.gd_info}"
+                android:textSize="12sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_special_price"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxEms="10"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:maxLines="1"
+                        android:textSize="12sp"
+                        android:text="@{String.format(@string/specigl_price_s,goodsBean.gd_original_price)}" />
+<!--
+binding:strikethrough="@{String.format(@string/specigl_price_s,goodsBean.gd_original_price)}"-->
+                    <TextView
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginRight="3dp"
+                        android:text="/" />
+
+                    <TextView
+                        android:visibility="gone"
+                        android:paddingBottom="8dp"
+                        android:id="@+id/tv_goods_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2dp"
+                        android:layout_marginTop="2dp"
+                        android:ellipsize="end"
+                        android:maxEms="10"
+                        android:textSize="12sp"
+                        android:maxLines="1"
+                        android:text="@{String.format(@string/special_offer_s,goodsBean.gd_special_offer)}"
+                        android:textColor="@android:color/holo_red_light" />
+
+                </LinearLayout>
+                <TextView
+                    android:layout_weight="1"
+                    android:text="@{goodsBean.gd_cityname}"
+                    android:gravity="center_vertical|end"
+                    android:maxLines="1"
+                    android:layout_marginRight="10dp"
+                    android:textSize="12sp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>
+

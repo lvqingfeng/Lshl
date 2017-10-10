@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:binding="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="com.lshl.api.ApiClient" />
+
+        <variable
+            name="imageUrl"
+            type="String" />
+
+        <variable
+            name="newsBean"
+            type="com.lshl.bean.NewsListBean.ListBean" />
+    </data>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:gravity="center_vertical"
+        android:background="@color/background_white"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            <TextView
+                android:text="@{newsBean.title}"
+                android:textColor="@color/textBlackColor"
+                android:layout_width="match_parent"
+                android:lines="1"
+                android:maxLines="1"
+                android:layout_height="wrap_content" />
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="match_parent">
+                <TextView
+                    android:text="@{newsBean.name}"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    binding:timeDate="@{newsBean.add_time}"
+                    android:gravity="end|center_vertical"
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+        <ImageView
+            android:layout_marginLeft="10dp"
+            android:id="@+id/hongbang"
+            android:src="@mipmap/hongbang"
+            android:scaleType="centerCrop"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+    </LinearLayout>
+</layout>

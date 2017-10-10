@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_qrcode"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.lshl.ui.me.activity.QRcodeActivity">
+        <include layout="@layout/app_layout_title"/>
+
+        <LinearLayout
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/background_white"
+            android:orientation="vertical">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/head_image"
+                    android:scaleType="centerCrop"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp" />
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:paddingLeft="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/textBlackColor"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp" />
+                    <TextView
+                        android:text="扫一扫下面的二维码,加我为好友"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/textBlackColor"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:padding="10dp"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/qr_code"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/account_logo"
+                    android:layout_width="220dp"
+                    android:layout_height="220dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/sao"
+                    android:text="扫一扫"
+                    android:background="@drawable/bg_blue_btn"
+                    android:textColor="@color/background_white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <Button
+                    android:id="@+id/share"
+                    android:visibility="gone"
+                    android:text="重新生成"
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/bg_red_btn"
+                    android:textColor="@color/background_white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <Button
+                    android:id="@+id/btn_save"
+                    android:text="保存"
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/bg_blue_btn"
+                    android:textColor="@color/background_white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

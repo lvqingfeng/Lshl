@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data class="AppliceHelpItemBinding">
+        <variable
+            name="bean"
+            type="com.lshl.bean.ForHelpBean.ListBean"/>
+    </data>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:padding="5dp"
+        android:background="#fff"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/head_image"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/account_logo"
+            android:layout_width="80dp"
+            android:layout_height="80dp" />
+        <LinearLayout
+            android:layout_weight="1"
+            android:paddingLeft="10dp"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/name"
+                android:text="@{bean.ma_project_name}"
+                android:textColor="#333"
+                android:textSize="14sp"
+                android:padding="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/money"
+                android:padding="5dp"
+                android:text='@{"筹款目标"+bean.ma_project_money}'
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/status"
+            android:padding="5dp"
+            android:textColor="#fff"
+            android:background="@drawable/bg_solid_blue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</layout>

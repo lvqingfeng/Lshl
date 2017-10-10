@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="present"
+            type="com.lshl.ui.me.activity.ReportActivity.Presenter"/>
+    </data>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_report"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        tools:context="com.lshl.ui.me.activity.ReportActivity">
+        <include layout="@layout/app_layout_title"/>
+
+       <FrameLayout
+           android:layout_width="match_parent"
+           android:layout_height="200dp">
+           <Button
+               android:onClick="@{()->present.report()}"
+               android:id="@+id/report"
+               android:layout_marginRight="10dp"
+               android:layout_marginBottom="10dp"
+               android:layout_gravity="bottom|end"
+               android:text="确认举报"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:background="@drawable/bg_blue_btn"/>
+
+           <EditText
+               android:gravity="start"
+               android:id="@+id/et_message"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               />
+       </FrameLayout>
+
+
+
+    </LinearLayout>
+</layout>

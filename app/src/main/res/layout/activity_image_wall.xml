@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_image_wall"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.lshl.ui.me.activity.ImageWallActivity">
+        <include layout="@layout/app_layout_title"/>
+        <FrameLayout
+            android:background="@color/background_white"
+            android:layout_width="match_parent"
+            android:layout_height="160dp">
+            <ImageView
+                android:id="@+id/background"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/default_background"
+                android:layout_marginBottom="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:id="@+id/head_image"
+                android:scaleType="centerCrop"
+                android:background="@mipmap/account_logo"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_width="80dp"
+                android:layout_height="80dp" />
+        </FrameLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:paddingTop="10dp"
+            android:id="@+id/recycler_view"
+            android:background="@color/background_white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:background="@color/background_white"
+            android:layout_width="match_parent"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/addPhoto"
+                android:background="@color/windowBackgroundColor"
+                android:src="@drawable/ic_vector_add"
+                android:layout_width="75dp"
+                android:layout_height="75dp" />
+        </LinearLayout>
+        <View
+            style="@style/TenDpGrayView"/>
+        <TextView
+            android:visibility="gone"
+            android:text="点击查看图片,长按删除图片"
+            android:padding="10dp"
+            android:background="@color/background_white"
+            android:gravity="center"
+            android:textColor="@color/textBlackColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</layout>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:binding="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="com.lshl.api.ApiClient" />
+
+        <variable
+            name="imageUrl"
+            type="String" />
+
+        <variable
+            name="newsBean"
+            type="com.lshl.bean.NewsListBean.ListBean" />
+    </data>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_white"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/title"
+            android:text="@{newsBean.title}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="2"
+            android:maxLines="2"
+            android:textColor="@color/textBlackColor" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                binding:timeDate="@{newsBean.add_time}"
+                android:maxLines="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/textBlackColor"
+                android:textSize="14sp" />
+
+            <TextView
+                android:maxLines="1"
+                android:gravity="end"
+                android:text="@{newsBean.name}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/textBlackColor"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

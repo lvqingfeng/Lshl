@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="presenter"
+            type="com.lshl.ui.pay.SelectPayActivity.Presenter" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/app_layout_title" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    style="@style/gray_line"
+                    android:layout_marginTop="10dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="支付金额"
+                        android:textColor="@color/textBlackColor"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_vip_pay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="￥:"
+                            android:textColor="@color/textBlackColor" />
+
+                        <TextView
+                            android:id="@+id/tv_input_money"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:gravity="right"
+                            android:padding="10dp"
+                            android:text="12541"
+                            android:textColor="@color/textRedColor"
+                            android:textColorHint="#999"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/edit_input_money"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:hint="单位（元）"
+                        android:inputType="numberDecimal"
+                        android:padding="10dp"
+                        android:textColorHint="#999"
+                        android:textSize="11sp" />
+
+                </LinearLayout>
+
+                <View style="@style/gray_line" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="*请选择支付方式"
+                    android:textColor="#999"
+                    android:textSize="10sp" />
+
+                <View style="@style/gray_line" />
+
+                <RadioGroup
+                    android:id="@+id/radio_group_pay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:divider="@drawable/ll_divider"
+                    android:orientation="vertical"
+                    android:showDividers="middle">
+
+                    <RadioButton
+                        android:id="@+id/radio_union_pay"
+                        style="@style/PayItemStyle"
+                        android:drawableLeft="@drawable/ic_vector_union_pay"
+                        android:drawableRight="@drawable/ic_checked_select"
+                        android:text="银联支付"
+                        android:visibility="gone" />
+
+                    <RadioButton
+                        android:id="@+id/radio_wx_pay"
+                        style="@style/PayItemStyle"
+                        android:drawableLeft="@drawable/ic_vector_wx_pay"
+                        android:drawableRight="@drawable/ic_checked_select"
+                        android:text="微信支付" />
+
+                    <RadioButton
+                        android:id="@+id/radio_ali_pay"
+                        style="@style/PayItemStyle"
+                        android:drawableLeft="@drawable/ic_vector_alipay"
+                        android:drawableRight="@drawable/ic_checked_select"
+                        android:text="支付宝支付" />
+                </RadioGroup>
+
+                <View style="@style/gray_line" />
+
+                <Button
+                    style="@style/big_button"
+                    android:layout_marginTop="50dp"
+                    android:background="@drawable/bg_red_btn"
+                    android:onClick="@{()->presenter.onClickStartPay()}"
+                    android:text="确认支付" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

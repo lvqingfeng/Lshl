@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="presenter"
+            type="com.lshl.ui.me.activity.ChangePhoneActivity.Presenter" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/app_layout_title" />
+
+        <android.support.design.widget.TextInputLayout
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/bg_solid_white">
+
+            <EditText
+                android:id="@+id/edit_old_phone"
+                style="@style/EditCenterBackground"
+                android:hint="请输入您当前的手机号"
+                android:inputType="phone"
+                android:maxLength="11" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/bg_solid_white">
+
+            <EditText
+                android:id="@+id/edit_new_phone"
+                style="@style/EditCenterBackground"
+                android:hint="请输入您的新手机号"
+                android:inputType="phone"
+                android:maxLength="11" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/bg_solid_white"
+            android:orientation="horizontal">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <EditText
+                    android:id="@+id/edit_picture_code"
+                    style="@style/EditCenterBackground"
+                    android:hint="请输入验证码" />
+
+
+            </android.support.design.widget.TextInputLayout>
+
+            <View
+                android:layout_width="2px"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="2dp"
+                android:background="#eee" />
+
+            <ImageView
+                android:id="@+id/iv_picture_code"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="3dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="3dp"
+                android:background="#f3fbfe"
+                android:onClick="@{(v)->presenter.onClickGetPictureCode(v)}"
+                android:scaleType="fitXY" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_solid_white">
+
+                <EditText
+                    android:id="@+id/edit_phone_code"
+                    style="@style/EditCenterBackground"
+                    android:hint="请输入您接收到的验证码" />
+
+            </android.support.design.widget.TextInputLayout>
+
+
+            <Button
+                android:id="@+id/btn_get_phone_code"
+                style="@style/small_btn"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/bg_blue_btn"
+                android:onClick="@{()->presenter.onClickGetPhoneCode()}"
+                android:text="获取验证码"
+                android:textColor="#fff" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_submit"
+            style="@style/big_button"
+            android:layout_marginTop="45dp"
+            android:background="@drawable/bg_gray_btn"
+            android:enabled="false"
+            android:onClick="@{()->presenter.onClickSubmit()}"
+            android:text="提交" />
+
+    </LinearLayout>
+</layout>

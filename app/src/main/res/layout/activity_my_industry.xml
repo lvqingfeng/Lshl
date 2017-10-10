@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_my_industry"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_white"
+        android:orientation="vertical"
+        tools:context="com.lshl.ui.me.activity.MyIndustryActivity">
+        <include layout="@layout/app_layout_title"/>
+        <LinearLayout
+            android:background="@color/background_white"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.liaoinstan.springview.widget.SpringView
+                android:id="@+id/spring_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    android:background="@color/windowBackgroundColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </com.liaoinstan.springview.widget.SpringView>
+        </LinearLayout>
+        <Button
+            android:text="保     存"
+            android:id="@+id/btn_commit"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/background_white"
+            android:background="@drawable/bg_blue_btn" />
+    </LinearLayout>
+</layout>

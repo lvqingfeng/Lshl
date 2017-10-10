@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:binding="http://schemas.android.com/apk/res-auto">
+
+    <data class="GroupMembersImageItemBinding">
+
+        <import type="com.lshl.api.ApiClient" />
+
+        <variable
+            name="userBean"
+            type="com.lshl.db.bean.HxUserBean" />
+
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            binding:defaultIcon="@{@drawable/ease_default_avatar}"
+            binding:imageRoundLoad="@{ApiClient.getHxFriendsImage(userBean.avatar)}"
+            binding:radius="@{10}" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#aa000000"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:padding="5dp"
+            android:text="@{userBean.realname}"
+            android:textColor="@android:color/white" />
+
+    </RelativeLayout>
+</layout>

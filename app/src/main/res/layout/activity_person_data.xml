@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_person_data"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.lshl.ui.me.activity.PersonDataActivity">
+
+        <include layout="@layout/app_layout_title" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="155dp">
+                    <ImageView
+                        android:src="@mipmap/default_background"
+                        android:id="@+id/background"
+                        android:scaleType="centerCrop"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="155dp"
+                        android:background="@null">
+
+                        <LinearLayout
+                            android:id="@+id/ll_user_info"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="45dp"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical"
+                            android:paddingBottom="15dp">
+
+                            <ImageView
+                                android:visibility="gone"
+                                android:scaleType="centerCrop"
+                                android:id="@+id/headImage"
+                                android:layout_width="75dp"
+                                android:layout_height="75dp"
+                                android:src="@mipmap/account_logo" />
+
+                            <TextView
+                                android:id="@+id/tv_user_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:textColor="#fff" />
+
+                            <TextView
+                                android:id="@+id/tv_user_address"
+                                android:textColor="#fff"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="12dp">
+
+                        </LinearLayout>
+                        <ImageView
+                            android:id="@+id/grade"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginBottom="8dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:textColor="@color/background_white"
+                            android:gravity="center_vertical"
+                            android:drawableLeft="@drawable/ic_vector_renzhen"
+                            android:id="@+id/authentication"
+                            android:paddingRight="12dp"
+                            android:paddingBottom="12dp"
+                            android:text="待审核"
+                            android:visibility="gone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentRight="true" />
+                    </RelativeLayout>
+                </FrameLayout>
+                <View
+                    style="@style/TenDpGrayView"/>
+                <LinearLayout
+                    android:focusable="true"
+                    android:background="#fff"
+                    android:focusableInTouchMode="true"
+                    android:padding="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:textColor="@color/textBlackColor"
+                        android:text="真实姓名"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:textColor="@color/textBlackColor"
+                        android:id="@+id/et_name"
+                        android:maxLines="1"
+                        style="@style/PersonDataTextView" />
+                </LinearLayout>
+                <View
+                   style="@style/gray_line"/>
+                <LinearLayout
+                    android:background="#fff"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:padding="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:textColor="@color/textBlackColor"
+                        android:text="性别"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView7" />
+
+                    <TextView
+                        android:maxLines="1"
+                        style="@style/PersonDataTextView"
+                        android:id="@+id/et_sex" />
+                </LinearLayout>
+                <View
+                    style="@style/gray_line"/>
+                <LinearLayout
+                    android:background="#fff"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:padding="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:textColor="@color/textBlackColor"
+                        android:text="出生日期"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView8" />
+
+                    <TextView
+                        android:maxLines="1"
+                        android:id="@+id/et_birthday"
+                        style="@style/PersonDataTextView" />
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="#fafafa"/>
+                <LinearLayout
+                    android:background="#fff"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:padding="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:textColor="@color/textBlackColor"
+                        android:text="老家地址"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:maxLines="1"
+                        android:id="@+id/now_address"
+                        style="@style/PersonDataTextView"  />
+                </LinearLayout>
+                <View
+                    style="@style/gray_line"/>
+                <LinearLayout
+                    android:id="@+id/edit_address"
+                    android:background="#fff"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:padding="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:textColor="@color/textBlackColor"
+                        android:text="常驻地址"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView14" />
+
+                    <TextView
+                        android:maxLines="1"
+                        android:id="@+id/et_address"
+                        style="@style/PersonDataTextView"  />
+                </LinearLayout>
+                <View
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/windowBackgroundColor"/>
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:id="@+id/enterprise_message"
+                    android:background="#fff"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:focusableInTouchMode="true"
+                    android:padding="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:gravity="center_vertical"
+                        android:textColor="@color/textBlackColor"
+                        android:text="企业信息"
+                        android:drawableRight="@drawable/ic_vector_right_go"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/textView9" />
+
+
+                </LinearLayout>
+                <View
+                    style="@style/gray_line"/>
+
+                <LinearLayout
+                    android:id="@+id/image_wall"
+                    android:background="#fff"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:focusableInTouchMode="true"
+                    android:padding="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:gravity="center_vertical"
+                        android:textColor="@color/textBlackColor"
+                        android:text="照片墙"
+                        android:drawableRight="@drawable/ic_vector_right_go"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+
+                </LinearLayout>
+                <View
+                    style="@style/OneDpGrayView"/>
+                <LinearLayout
+                    android:visibility="gone"
+                    android:background="#fff"
+                    android:id="@+id/ll_company"
+                    android:padding="10dp"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:gravity="center_vertical"
+                        android:text="实名认证"
+                        android:textColor="@color/textBlackColor"
+                        android:drawableRight="@drawable/ic_vector_right_go"
+                        android:id="@+id/tv_message"
+                        android:drawablePadding="10dp"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <View
+                   style="@style/TenDpGrayView"/>
+                <LinearLayout
+                    android:id="@+id/industry"
+                    android:background="#fff"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:focusableInTouchMode="true"
+                    android:padding="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:gravity="center_vertical"
+                        android:textColor="@color/textBlackColor"
+                        android:text="行业分类"
+                        android:drawableRight="@drawable/ic_vector_right_go"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+
+                </LinearLayout>
+                <View
+                   style="@style/gray_line"/>
+                <LinearLayout
+                    android:id="@+id/zxing"
+                    android:background="#fff"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:focusableInTouchMode="true"
+                    android:padding="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:gravity="center_vertical"
+                        android:textColor="@color/textBlackColor"
+                        android:text="我的二维码"
+                        android:drawableRight="@drawable/ic_vector_right_go"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

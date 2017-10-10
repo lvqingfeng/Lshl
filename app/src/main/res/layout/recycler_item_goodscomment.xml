@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:padding="5dp"
+        android:background="@color/background_white"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:background="@color/background_white"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:scaleType="centerCrop"
+                android:src="@mipmap/account_logo"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/iv_headimg" />
+
+            <LinearLayout
+                android:background="@color/background_white"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:paddingLeft="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:background="#fff"
+                        android:textColor="@color/textBlackColor"
+                        android:id="@+id/tv_name"
+                        android:layout_weight="1"
+                        android:paddingBottom="3dp"
+                        android:paddingTop="3dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/tv_time"
+                        android:gravity="end"
+                        android:layout_weight="1"
+                        android:background="#fff"
+                        android:textColor="@color/textBlackColor"
+                        android:paddingBottom="3dp"
+                        android:paddingTop="3dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <TextView
+                    android:paddingLeft="15dp"
+                    android:id="@+id/tv_grade"
+                    android:paddingTop="3dp"
+                    android:background="@color/background_white"
+                    android:textColor="@color/textBlackColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+        <TextView
+            android:textColor="@color/textBlackColor"
+            android:id="@+id/tv_info"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</layout>

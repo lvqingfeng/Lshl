@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="java.lang.String" />
+
+        <variable
+            name="phoneNum"
+            type="String" />
+
+
+        <variable
+            name="presenter"
+            type="com.lshl.ui.me.activity.EditGoodsActivity.Presenter" />
+
+        <variable
+            name="goodsType"
+            type="String" />
+
+        <variable
+            name="address"
+            type="String" />
+
+        <variable
+            name="goodsBean"
+            type="com.lshl.bean.GoodsDetailsBean.InfoBean" />
+
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/app_layout_title" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+            <Button
+                android:id="@+id/btn_save"
+                style="@style/big_button"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/bg_blue_btn"
+                android:text="发      布" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="50dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="85dp"
+                        android:layout_marginBottom="13dp"
+                        android:layout_marginTop="13dp"
+                        android:background="@android:color/white">
+
+
+                        <LinearLayout
+                            android:id="@+id/ll_add_photo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="65dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/bg_solid_gray"
+                            android:gravity="center"
+                            android:onClick="@{()->presenter.onClickAddGoodsImg()}"
+                            android:orientation="vertical"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp">
+
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/ic_vector_add_a_photo" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="添加图片" />
+                        </LinearLayout>
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/recycler_photo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toLeftOf="@id/ll_add_photo"
+                            android:layout_toStartOf="@id/ll_add_photo" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"
+                        android:orientation="horizontal"
+                        android:padding="13dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="名    称"
+                            android:textColor="@color/textBlackColor"
+                            android:textSize="16sp" />
+
+                        <EditText
+                            android:maxLength="50"
+                            android:id="@+id/edit_goods_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:background="@null"
+                            android:hint="请输入商品名称"
+                            android:singleLine="true"
+                            android:text="@{goodsBean.gd_goodname}"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <View style="@style/gray_line" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"
+                        android:orientation="horizontal"
+                        android:padding="13dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="价    格"
+                            android:textColor="@color/textBlackColor"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:visibility="gone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ems="2"
+                            android:gravity="right"
+                            android:text="￥:" />
+
+                        <EditText
+                            android:id="@+id/edit_goods_price"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:background="@null"
+                            android:hint="请输入商品市场价"
+                            android:inputType="numberDecimal"
+                            android:singleLine="true"
+                            android:text="@{goodsBean.gd_original_price}"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"
+                        android:orientation="horizontal"
+                        android:padding="13dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="老乡价"
+                            android:textColor="@color/textBlackColor"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ems="2"
+                            android:gravity="right"
+                            android:text="￥:"
+                            android:textColor="@color/text_red_color" />
+
+                        <EditText
+                            android:id="@+id/edit_special_offer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:background="@null"
+                            android:hint="请输入您给老乡的优惠价"
+                            android:inputType="numberDecimal"
+                            android:singleLine="true"
+                            android:text="@{goodsBean.gd_special_offer}"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+
+                    <View style="@style/gray_line" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingBottom="7dp"
+                        android:paddingLeft="13dp"
+
+                        android:paddingRight="13dp"
+                        android:paddingTop="7dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="分    类"
+                            android:textColor="@color/textBlackColor"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/type"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:hint="请选择商品的类型"
+                            android:text="@{goodsType}" />
+
+
+
+                        <RelativeLayout
+                            android:visibility="gone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <Spinner
+                                android:id="@+id/spinner_goods_type"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:background="@drawable/bg_stroke_gray" />
+
+                            <ImageView
+                                android:id="@+id/iv_goods_type_more"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:paddingBottom="4dp"
+                                android:paddingTop="4dp"
+                                android:src="@drawable/ic_vector_more" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <View style="@style/gray_line" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"
+                        android:orientation="horizontal"
+                        android:padding="13dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="电    话"
+                            android:textColor="@color/textBlackColor"
+                            android:textSize="16sp" />
+
+                        <EditText
+                            android:id="@+id/edit_phone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:background="@null"
+                            android:hint="请输入您的联系方式"
+                            android:inputType="number"
+                            android:maxEms="11"
+                            android:singleLine="true"
+                            android:text="@{phoneNum}"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+
+                    <View style="@style/gray_line" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"
+                        android:onClick="@{()->presenter.onClickAddressSelect()}"
+                        android:orientation="horizontal"
+                        android:padding="13dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="城    市"
+                            android:textColor="@color/textBlackColor"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/tv_address"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:hint="点击选择商品城市地址"
+                            android:maxLines="1"
+                            android:text="@{address}" />
+                    </LinearLayout>
+
+                    <View
+                        style="@style/gray_line"
+                        android:layout_marginTop="15dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"
+                        android:orientation="horizontal"
+                        android:padding="13dp"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="描述"
+                            android:textColor="@color/textBlackColor"
+                            android:textSize="16sp" />
+
+                        <EditText
+                            android:id="@+id/edit_goods_selling"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:background="@drawable/bg_stroke_gray"
+                            android:gravity="left|top"
+                            android:hint="对您的商品进行简单描述"
+                            android:lines="8"
+                            android:padding="6dp"
+                            android:text="@{goodsBean.gd_info}"
+                            android:textSize="14sp" />
+
+
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp" />
+
+                    <com.lshl.widget.ShareLinerLayout
+                        android:visibility="gone"
+                        android:id="@+id/share_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+
+                </LinearLayout>
+            </ScrollView>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

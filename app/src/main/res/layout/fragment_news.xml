@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="presenter"
+            type="com.lshl.ui.fragment.NewsFragment.Presenter" />
+    </data>
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp_news"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/floating_btn_call_sos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:layout_marginBottom="55dp"
+            android:layout_marginEnd="35dp"
+            android:layout_marginRight="35dp"
+            android:onClick="@{()->presenter.callSosListener()}"
+            android:src="@drawable/ic_vector_call_sos" />
+
+
+    </FrameLayout>
+</layout>

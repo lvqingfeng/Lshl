@@ -1,0 +1,33 @@
+[
+  {
+    "key": "yaowen",
+    "val": "要闻",
+    "isAdd": true,
+    "position": 0,
+    "isFixed": true
+  },
+
+  {
+    "key": "koubei",
+    "isAdd": true,
+    "position": 1,
+    "val": "口碑"
+  },
+  {
+    "key": "shanghui",
+    "position": -1,
+    "val": "商会"
+  },
+  {
+    "key": "zimaoqu",
+    "position": 3,
+    "isAdd": true,
+    "val": "自贸区"
+  },
+  {
+    "key": "lushang",
+    "val": "鲁商",
+    "position": 2,
+    "isAdd": true
+  }
+]

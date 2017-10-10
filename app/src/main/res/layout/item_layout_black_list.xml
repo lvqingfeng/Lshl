@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:binding="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.lshl.api.ApiClient" />
+
+        <variable
+            name="userBean"
+            type="com.lshl.db.bean.HxUserBean" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:background="@color/background_white"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="centerCrop"
+            binding:defaultIcon="@{@drawable/ease_default_avatar}"
+            binding:imageLoad="@{ApiClient.getHxFriendsImage(userBean.avatar)}" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:maxLines="1"
+            android:text="@{userBean.realname}"
+            android:textColor="@color/textBlackColor" />
+    </LinearLayout>
+</layout>

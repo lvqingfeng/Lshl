@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data class="UpdateGroupImageBinding">
+        <variable
+            name="presenter"
+            type="com.lshl.ui.info.group.UpdateGroupImageActivity.Presenter"/>
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.lshl.ui.info.group.UpdateGroupImageActivity">
+
+
+        <include layout="@layout/app_layout_title" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:text="请选择您要修改的群头像"/>
+
+            <ImageView
+                android:id="@+id/iv_add_group_head"
+                android:layout_width="125dp"
+                android:layout_height="125dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="65dp"
+                android:onClick="@{()->presenter.groupHeadImageClick()}"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_vector_add_head_portrait" />
+
+
+            <Button
+                style="@style/big_button"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="45dp"
+                android:onClick="@{()->presenter.submitGroupAvatar()}"
+                android:background="@drawable/bg_green_btn"
+                android:text="修改群头像" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</layout>

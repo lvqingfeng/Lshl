@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data class="HeadMessageLayoutBinding">
+
+        <import type="com.lshl.utils.DateUtils" />
+
+        <import type="java.lang.String" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="inviterMessage"
+            type="com.lshl.db.bean.InviteMessage" />
+
+        <variable
+            name="unreadCount"
+            type="java.lang.Integer" />
+
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="12dp"
+                android:background="@drawable/bg_round_blue"
+                android:padding="12dp"
+                android:src="@drawable/ic_vector_group_message" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingRight="10dp"
+                android:paddingTop="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_group_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="群通知"
+                        android:textColor="@color/textBlackColor"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tv_send_time"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:text="@{DateUtils.getTimestampString(inviterMessage.time)}"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingTop="7dp">
+
+                    <TextView
+                        android:id="@+id/tv_notify_content"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:singleLine="true"
+                        android:text='@{(inviterMessage.realname ?? inviterMessage.from)+" "+inviterMessage.status.getValue()+" "+inviterMessage.groupName}' />
+
+                    <TextView
+                        android:id="@+id/tv_group_unread_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ease_unread_count_bg"
+                        android:gravity="center"
+                        android:text="@{String.valueOf(unreadCount)}"
+                        android:textColor="@android:color/white"
+                        android:textSize="12sp"
+                        android:visibility="@{unreadCount == 0 ? View.GONE :View.VISIBLE}" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <View style="@style/gray_line" />
+
+    </LinearLayout>
+</layout>

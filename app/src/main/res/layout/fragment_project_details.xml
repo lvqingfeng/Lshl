@@ -1,0 +1,331 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="com.lshl.ui.dscs.activity.DscsProjectDetailsActivity" />
+
+        <variable
+            name="fromWhere"
+            type="Integer" />
+
+        <variable
+            name="presenter"
+            type="com.lshl.ui.dscs.fragment.ProjectProgressFragment.Presenter" />
+
+        <variable
+            name="projectBean"
+            type="com.lshl.bean.DscsProjectDetailsBean" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_go_vote"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:text="去投票"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:visibility="gone" />
+
+        <ScrollView
+            android:id="@+id/sl_top"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/tv_go_vote"
+            android:paddingBottom="5dp"
+            android:scrollbars="none">
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="简介"
+                    android:textColor="@color/textBlackColor" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/bg_solid_dark_gray"
+                    android:padding="10dp"
+                    android:text="@{projectBean.info}" />
+
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp" />
+
+                <View style="@style/gray_line" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/windowBackgroundColor" />
+
+                <RadioGroup
+                    android:id="@+id/radio_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_stroke_red"
+                    android:orientation="horizontal"
+                    android:padding="1px">
+
+                    <RadioButton
+                        android:id="@+id/radio_btn_first"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_project_btn_left"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="初审"
+                        android:textColor="@color/white_or_red_select" />
+
+                    <RadioButton
+                        android:id="@+id/radio_btn_second"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_project_btn_middle"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="复审"
+                        android:textColor="@color/white_or_red_select" />
+
+                    <RadioButton
+                        android:id="@+id/radio_btn_third"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_project_btn_right"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="终审"
+                        android:textColor="@color/white_or_red_select" />
+                </RadioGroup>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:divider="@drawable/ll_divider"
+                    android:orientation="vertical"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:showDividers="middle">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingBottom="10dp"
+                        android:paddingTop="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="投票总人数"
+                            android:textColor="@color/textBlackColor" />
+
+                        <View style="@style/weight_view" />
+
+                        <TextView
+                            android:id="@+id/tv_num"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/textBlackColor" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingBottom="10dp"
+                        android:paddingTop="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="支持票"
+                            android:textColor="@color/textBlackColor" />
+
+                        <View style="@style/weight_view" />
+
+                        <TextView
+                            android:id="@+id/tv_support"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/textBlackColor" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingBottom="10dp"
+                        android:paddingTop="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="反对票"
+                            android:textColor="@color/textBlackColor" />
+
+                        <View style="@style/weight_view" />
+
+                        <TextView
+                            android:id="@+id/tv_oppose"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/textBlackColor" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingBottom="10dp"
+                        android:paddingTop="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="弃权票"
+                            android:textColor="@color/textBlackColor" />
+
+                        <View style="@style/weight_view" />
+
+                        <TextView
+                            android:id="@+id/tv_waiver"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/textBlackColor" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View style="@style/gray_line" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/windowBackgroundColor" />
+                <!--互助显示的内容-->
+                <LinearLayout
+                    android:id="@+id/ll_help"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@drawable/ll_divider"
+                    android:orientation="vertical"
+                    android:showDividers="middle"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tv_security"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_vector_security"
+                        android:drawablePadding="10dp"
+                        android:gravity="center_vertical"
+                        android:onClick="@{()->presenter.onClickGuarantorList()}"
+                        android:padding="7dp"
+                        android:text="担保"
+                        android:textColor="@color/textBlackColor" />
+
+                    <TextView
+                        android:id="@+id/tv_help_loan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_vector_loan"
+                        android:drawablePadding="10dp"
+                        android:gravity="center_vertical"
+                        android:onClick="@{()->presenter.onClickShowMoneyInfo()}"
+                        android:padding="7dp"
+                        android:text="放款"
+                        android:textColor="@color/textBlackColor"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <!--公益详情显示的内容-->
+                <LinearLayout
+                    android:id="@+id/ll_good"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@drawable/ll_divider"
+                    android:orientation="vertical"
+                    android:showDividers="middle"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tv_executor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_vector_executor"
+                        android:drawablePadding="10dp"
+                        android:gravity="center_vertical"
+                        android:onClick="@{()->presenter.onClickExecutivePersonList()}"
+                        android:padding="7dp"
+                        android:text="执行"
+                        android:textColor="@color/textBlackColor" />
+
+                    <TextView
+                        android:id="@+id/tv_good_loan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_vector_loan"
+                        android:drawablePadding="10dp"
+                        android:gravity="center_vertical"
+                        android:onClick="@{()->presenter.onClickShowMoneyInfo()}"
+                        android:padding="7dp"
+                        android:text="放款"
+                        android:textColor="@color/textBlackColor" />
+
+                    <TextView
+                        android:id="@+id/tv_receipt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_vector_receipt"
+                        android:drawablePadding="10dp"
+                        android:gravity="center_vertical"
+                        android:onClick="@{()->presenter.onClickFeedback()}"
+                        android:padding="7dp"
+                        android:text="回执"
+                        android:textColor="@color/textBlackColor" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </ScrollView>
+
+
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="presenter"
+            type="com.lshl.ui.business.activity.SHDynamDetailsicActivity.Presenter" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/app_layout_title" />
+        <View
+           style="@style/TenDpGrayView"/>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.liaoinstan.springview.widget.SpringView
+                android:id="@+id/spring_view"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    android:background="@color/windowBackgroundColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </com.liaoinstan.springview.widget.SpringView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_alignParentBottom="true"
+                android:background="@android:color/white"
+                android:orientation="vertical">
+
+                <View style="@style/gray_line" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/ic_vector_write_comment"
+                    android:drawablePadding="3dp"
+                    android:gravity="center_vertical"
+                    android:onClick="@{()->presenter.sendComment()}"
+                    android:paddingLeft="12dp"
+                    android:text="写评论" />
+
+                <View
+                    style="@style/gray_line"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

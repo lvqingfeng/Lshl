@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:binding="http://schemas.android.com/tools">
+
+    <data class="GroupMembersListItemBinding">
+
+        <import type="com.lshl.api.ApiClient" />
+
+        <variable
+            name="userBean"
+            type="com.lshl.db.bean.HxUserBean" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            binding:defaultIcon="@{@drawable/ease_default_avatar}"
+            binding:imageCircleLoad="@{ApiClient.getHxFriendsImage(userBean.avatar)}" />
+
+        <TextView
+            android:id="@+id/tv_place"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:visibility="gone"
+            android:background="@drawable/bg_solid_yellow"
+            android:paddingBottom="2dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingTop="2dp"
+            android:text="群主"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:maxLines="1"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@{userBean.realname}"
+            android:textColor="@color/textBlackColor"
+            android:textSize="16sp" />
+    </LinearLayout>
+</layout>

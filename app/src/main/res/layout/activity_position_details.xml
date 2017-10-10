@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="presenter"
+            type="com.lshl.ui.appliance.job.PositionDetailsActivity.Presenter"/>
+    </data>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_position_details"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.lshl.ui.appliance.job.PositionDetailsActivity">
+        <include layout="@layout/app_layout_title"/>
+        <ScrollView
+            android:fillViewport="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:background="@color/windowBackgroundColor"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    style="@style/BaseLinerLayoutStyle">
+                    <TextView
+                        android:textStyle="bold"
+                        android:id="@+id/name"
+                        android:text="Android开发"
+                        android:textSize="16sp"
+                        android:textColor="@color/textBlackColor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/money"
+                        android:text="6K-8K"
+                        android:textColor="@color/textRedColor"
+                        android:textSize="14sp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <LinearLayout
+                    style="@style/BaseLinerLayoutStyle">
+                    <TextView
+                        android:id="@+id/address"
+                        android:gravity="center_vertical"
+                        android:drawablePadding="10dp"
+                        android:drawableLeft="@drawable/ic_vector_loacation"
+                        android:text="兰州"
+                        android:textSize="12sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/education"
+                        android:layout_marginLeft="20dp"
+                        android:gravity="center_vertical"
+                        android:drawablePadding="10dp"
+                        android:drawableLeft="@drawable/ic_vector_education"
+                        android:text="大专"
+                        android:textSize="12sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <Space
+                   style="@style/TenDpGrayView" />
+                <LinearLayout
+                    android:onClick="@{()->presenter.enterpriseToDetails()}"
+                    android:background="@color/background_white"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/company_logo"
+                        android:scaleType="centerCrop"
+                        android:src="@mipmap/account_logo"
+                        android:layout_width="85dp"
+                        android:layout_height="85dp" />
+                    <LinearLayout
+                        android:background="@color/background_white"
+                        android:gravity="center_vertical"
+
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:textSize="14sp"
+                            android:id="@+id/company_name"
+                            android:padding="8dp"
+                            android:textColor="@color/textBlackColor"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:padding="8dp"
+                            android:id="@+id/people_num"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <ImageView
+                        android:src="@drawable/ic_vector_right_go"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <Space
+                    style="@style/TenDpGrayView" />
+                <TextView
+                    android:background="@color/background_white"
+                    android:textSize="16sp"
+                    android:padding="10dp"
+                    android:text="岗位介绍"
+                    android:textColor="@color/textBlackColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_margin="10dp"
+                    android:id="@+id/introduce"
+                    android:textSize="14sp"
+                    android:padding="10dp"
+                    android:background="@drawable/bg_solid_white"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp" />
+                <LinearLayout
+                    android:background="@color/background_white"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+                    <View
+                        android:layout_weight="1"
+                        android:background="@color/windowBackgroundColor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <LinearLayout
+                        android:gravity="bottom"
+                        android:background="@color/background_white"
+                        android:orientation="horizontal"
+                        android:layout_margin="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent">
+
+                        <Button
+                            android:id="@+id/commit"
+                            android:onClick="@{()->presenter.btnCommit()}"
+                            android:layout_marginRight="15dp"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:textSize="16sp"
+                            android:gravity="center"
+                            android:text="提交简历"
+                            android:textColor="@color/background_white"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_blue_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <ImageView
+                            android:onClick="@{()->presenter.ivCollection()}"
+                            android:id="@+id/iv_collection"
+                            android:padding="10dp"
+                            android:src="@drawable/ic_vector_uncollection"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+        <Space
+            style="@style/TenDpGrayView" />
+
+    </LinearLayout>
+</layout>

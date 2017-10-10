@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="presenter"
+            type="com.lshl.ui.me.activity.WealthAccountActivity.Presenter"/>
+    </data>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_wealth_account"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.lshl.ui.me.activity.WealthAccountActivity">
+        <include layout="@layout/app_layout_title"/>
+
+        <LinearLayout
+            android:background="#fafafa"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:onClick="@{()->presenter.zhifubao()}"
+                android:background="#fff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <TextView
+                    android:text="支付宝"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/zhifubao"
+                    android:gravity="end"
+                    android:layout_weight="1"
+                    android:drawableRight="@drawable/ic_vector_right_go"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <View
+                style="@style/gray_line"/>
+            <LinearLayout
+                android:onClick="@{()->presenter.weixin()}"
+                android:background="#fff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <TextView
+                    android:text="微信"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:gravity="end"
+                    android:layout_weight="1"
+                    android:drawableRight="@drawable/ic_vector_right_go"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/weixin" />
+            </LinearLayout>
+            <View
+                android:visibility="gone"
+                style="@style/gray_line"/>
+            <LinearLayout
+                android:visibility="gone"
+                android:onClick="@{()->presenter.yinhangka()}"
+                android:background="#fff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <TextView
+                    android:text="银行卡"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:gravity="end"
+                    android:layout_weight="1"
+                    android:drawableRight="@drawable/ic_vector_right_go"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/yinhangka" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

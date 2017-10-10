@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sex_man">&#xe601;</string><!--男性图标-->
+    <string name="sex_woman">&#xe600;</string><!--女性图标-->
+</resources>

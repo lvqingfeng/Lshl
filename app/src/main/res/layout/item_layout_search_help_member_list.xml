@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:binding="http://schemas.android.com/apk/res-auto">
+
+    <data class="SearchHelpMemberListBinding">
+
+        <import type="com.lshl.api.ApiClient" />
+
+        <import type="java.lang.String" />
+
+        <variable
+            name="memberBean"
+            type="com.lshl.bean.HelpMemberListBean.InfoBean" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingLeft="17dp"
+        android:paddingRight="17dp"
+        android:paddingTop="10dp">
+
+        <ImageView
+            android:id="@+id/iv_member_avatar"
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            binding:defaultIcon="@{@drawable/ease_default_image}"
+            binding:imageLoad="@{ApiClient.getHxFriendsImage(memberBean.avatar)}" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="@{memberBean.realname}"
+                android:textColor="@color/textBlackColor"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:maxLines="1"
+                android:textSize="12sp"
+                binding:formatText="@{String.valueOf(memberBean.distance)}"
+                binding:stringRes="@{@string/member_range_s}" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:maxLines="1"
+                binding:formatText="@{String.valueOf(memberBean.phone)}"
+                binding:stringRes="@{@string/member_phone_s}" />
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/check_member_select"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:button="@drawable/checked_bg_selector_help_member"
+            android:checked="@{memberBean.isSelected}" />
+
+    </LinearLayout>
+</layout>

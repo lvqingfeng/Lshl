@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:binding="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="com.lshl.api.ApiClient" />
+
+        <variable
+            name="imageUrl"
+            type="String" />
+
+        <variable
+            name="newsBean"
+            type="com.lshl.bean.NewsListBean.ListBean" />
+    </data>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:background="@color/background_white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <TextView
+                android:text="@{newsBean.title}"
+                android:maxLines="1"
+                android:textColor="@color/textBlackColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                binding:timeDate="@{newsBean.add_time}"
+                android:textSize="14sp"
+                android:layout_marginTop="10dp"
+                android:maxLines="1"
+                android:textColor="@color/textBlackColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/head_image"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/account_logo"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            binding:defaultIcon="@{@drawable/account_logo}"
+            binding:imageLoad="@{imageUrl}"/>
+    </LinearLayout>
+</layout>

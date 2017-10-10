@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/activity_welfare_mutual"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.lshl.ui.me.activity.WelfareMutualActivity">
+        <include layout="@layout/app_layout_title"/>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+           <android.support.design.widget.TabLayout
+               android:id="@+id/tab_welfare"
+               android:layout_width="match_parent"
+               android:layout_height="50dp"
+               app:tabSelectedTextColor="@color/indicatorColor"
+               app:tabIndicatorColor="@color/indicatorColor"/>
+            <android.support.v4.view.ViewPager
+                android:id="@+id/vp_welfare"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

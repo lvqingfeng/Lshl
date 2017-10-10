@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="5dp"
+    android:background="#fff"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/text"
+        android:textColor="#333"
+        android:bufferType="spannable"
+        android:layout_weight="1"
+        android:text="分享到："
+        android:padding="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <CheckBox
+        android:layout_margin="10dp"
+        android:button="@null"
+        android:background="@drawable/news_selector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/news" />
+    <CheckBox
+        android:id="@+id/qq"
+        android:button="@null"
+        android:layout_margin="10dp"
+        android:background="@drawable/qq_selector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <CheckBox
+        android:id="@+id/weixin"
+        android:layout_margin="10dp"
+        android:button="@null"
+        android:background="@drawable/weixin_selector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <CheckBox
+        android:id="@+id/sina"
+        android:layout_margin="10dp"
+        android:button="@null"
+        android:background="@drawable/sina_selector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <CheckBox
+        android:id="@+id/friend"
+        android:layout_margin="10dp"
+        android:button="@null"
+        android:background="@drawable/friend_selector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>

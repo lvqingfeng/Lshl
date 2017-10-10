@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="listBean"
+            type="com.lshl.bean.ShangHuiBean.ListBean" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <ImageView
+            android:id="@+id/iv_recyclersh_xx"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:background="@null"
+            android:scaleType="centerCrop" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="10dp">
+
+            <TextView
+                android:id="@+id/tv_recyclersh_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:paddingBottom="3dp"
+                android:paddingTop="3dp"
+                android:text="@{listBean.bus_business_name}"
+                android:textColor="@color/textBlackColor"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_recyclersh_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:paddingBottom="3dp"
+                android:paddingTop="3dp"
+                android:text="@{listBean.bus_business_cityname}" />
+
+        </LinearLayout>
+        <TextView
+            android:visibility="gone"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/num"
+            android:text='@{listBean.bus_business_number+@string/person}'
+            android:textColor="@color/background_white"
+            android:background="@drawable/bg_orange_tv"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</layout>

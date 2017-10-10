@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="presenter"
+            type="com.lshl.ui.business.activity.ShangHuiDetailsActivity.Presenter" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/app_layout_title" />
+
+        <com.bigkoo.convenientbanner.ConvenientBanner
+            android:id="@+id/cb_banner"
+            android:layout_width="match_parent"
+            android:layout_height="180dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:divider="@drawable/ll_divider"
+            android:dividerPadding="5dp"
+            android:orientation="vertical"
+            android:showDividers="middle">
+
+            <TextView
+                android:id="@+id/tv_info"
+                style="@style/TextViewMenu"
+                android:drawableLeft="@drawable/ic_vector_shanghui_info"
+                android:drawableRight="@drawable/ic_vector_right_go"
+                android:onClick="@{()->presenter.onClickInfo()}"
+                android:text="商会简介" />
+
+            <TextView
+                android:id="@+id/tv_dynamic"
+                style="@style/TextViewMenu"
+                android:drawableLeft="@drawable/ic_vector_shanghui_dynamic"
+                android:drawableRight="@drawable/ic_vector_right_go"
+                android:onClick="@{()->presenter.onClickDynamic()}"
+                android:text="商会动态" />
+
+            <TextView
+                android:id="@+id/tv_member"
+                style="@style/TextViewMenu"
+                android:drawableLeft="@drawable/ic_vector_shanghui_member"
+                android:drawableRight="@drawable/ic_vector_right_go"
+                android:onClick="@{()->presenter.onClickMember()}"
+                android:text="商会成员" />
+
+            <TextView
+                android:id="@+id/tv_contact"
+                style="@style/TextViewMenu"
+                android:drawableLeft="@drawable/ic_vector_shanghui_contact"
+                android:drawableRight="@drawable/ic_vector_right_go"
+                android:onClick="@{()->presenter.onClickConsultation()}"
+                android:text="对话商会" />
+
+            <TextView
+                android:id="@+id/tv_join"
+                style="@style/TextViewMenu"
+                android:drawableLeft="@drawable/ic_vector_shanghui_join"
+                android:drawableRight="@drawable/ic_vector_right_go"
+                android:onClick="@{()->presenter.onClickJoin()}"
+                android:text="申请加入" />
+            <TextView
+                android:id="@+id/tv_pay"
+                style="@style/TextViewMenu"
+                android:drawableLeft="@drawable/ic_vector_membership"
+                android:drawableRight="@drawable/ic_vector_right_go"
+                android:onClick="@{()->presenter.onClickMembership ()}"
+                android:text="缴纳会费" />
+            <TextView
+                android:id="@+id/tv_address"
+                style="@style/TextViewMenu"
+                android:drawableLeft="@drawable/ic_vector_new_shanghui"
+                android:drawableRight="@drawable/ic_vector_right_go"
+                android:onClick="@{()->presenter.onClickContact()}"
+                android:text="联系我们" />
+            <TextView
+                android:id="@+id/tv_exit"
+                style="@style/TextViewMenu"
+                android:drawableLeft="@drawable/ic_vector_shanghui_exit"
+                android:onClick="@{()->presenter.onClickExit()}"
+                android:text="退出商会"
+                android:visibility="gone" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:binding="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="com.lshl.api.ApiClient" />
+
+        <variable
+            name="imageUrl"
+            type="String" />
+
+        <variable
+            name="newsBean"
+            type="com.lshl.bean.NewsListBean.ListBean" />
+    </data>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:background="@color/background_white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="@{newsBean.title}"
+            android:layout_width="match_parent"
+            android:lines="1"
+            android:maxLines="1"
+            android:textColor="@color/textBlackColor"
+            android:layout_height="wrap_content" />
+        <ImageView
+            binding:defaultIcon="@{@drawable/account_logo}"
+            binding:imageLoad="@{imageUrl}"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:id="@+id/image"
+            android:scaleType="centerCrop"
+            android:layout_width="match_parent"
+            android:layout_height="140dp" />
+        <TextView
+            binding:timeDate="@{newsBean.add_time}"
+            android:textColor="@color/textBlackColor"
+            android:textSize="12sp"
+            android:gravity="end"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</layout>

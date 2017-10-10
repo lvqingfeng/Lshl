@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="red">#f00</color>
+    <color name="BaseColor">#ff0099cc</color>
+    <color name="BaseTopColor">#ff0099cc</color>
+    <color name="colorPrimary">#de3131</color>
+    <color name="colorPrimaryDark">#ff0099cc</color>
+    <color name="colorAccent">#de3131</color>
+    <color name="windowBackgroundColor">#f2f2f2</color>
+    <color name="grayBackground">#D5D5D5</color>
+    <color name="bottomSelectColor">#303F9F</color>
+    <color name="bottomUnSelectColor">#868686</color>
+    <color name="colorTitleColor">@android:color/white</color>
+    <color name="dynamicComment">#de8a8a</color>
+    <color name="indicatorColor">@android:color/holo_blue_dark</color>
+    <color name="lightGray">#d1d0d0</color>
+    <color name="userSexManColor">#61b1d1</color>
+    <color name="userSexWomanColor">#c4a8da</color>
+    <color name="sexMan">#a1c7f0</color>
+    <color name="sexwoMan">#fcb4c5</color>
+    <color name="textBlackColor">#3d3d40</color>
+    <color name="textBlueColor">#ff0099cc</color>
+    <color name="textOrangeColor">#fc785a</color>
+
+    <color name="textRedColor">#de3131</color>
+    <color name="shitYellow">#c78c21</color>
+
+    <color name="viewfinder_frame">#ff000000</color>
+    <color name="viewfinder_laser">#ffff0000</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="result_view">#b0000000</color>
+    <color name="possible_result_points">#00000000</color>
+
+
+</resources>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/iv_goodimg"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/account_logo" />
+
+        <LinearLayout
+            android:layout_weight="3"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:orientation="vertical"
+            android:paddingLeft="15dp">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:textColor="@color/textBlackColor" />
+            <View
+                android:layout_weight="1"
+                android:layout_width="1dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:id="@+id/tv_price"
+                android:textColor="@color/textBlackColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:visibility="gone"
+                android:textColor="#CD6600"
+                android:id="@+id/tv_price2"
+                android:layout_width="match_parent"
+                android:textSize="12sp"
+                android:paddingBottom="5dp"
+                android:layout_height="wrap_content"
+                android:paddingTop="5dp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="80dp">
+            <TextView
+                android:id="@+id/look_num"
+                android:textColor="@color/textBlackColor"
+                android:gravity="center_vertical|end"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <View
+                android:layout_weight="1"
+                android:layout_width="1dp"
+                android:layout_height="wrap_content"/>
+            <Button
+                android:layout_gravity="bottom|end"
+                android:background="@null"
+                android:id="@+id/collection"
+                android:textColor="@color/BaseColor"
+                android:gravity="center_vertical|end"
+                android:text="被关注"
+                android:layout_width="60dp"
+                android:layout_height="30dp" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

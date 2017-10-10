@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_company_second"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.lshl.ui.me.activity.CompanySecondActivity">
+        <include layout="@layout/app_layout_title"/>
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:padding="10dp"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:background="@color/background_white"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/head_image"
+                            android:scaleType="centerCrop"
+                            android:layout_width="55dp"
+                            android:layout_height="55dp" />
+                        <TextView
+                            android:id="@+id/title"
+                            android:paddingLeft="10dp"
+                            android:textSize="16sp"
+                            android:textColor="@color/textBlackColor"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <View
+                        style="@style/TenDpGrayView"/>
+                    <LinearLayout
+                        android:background="@color/background_white"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="10dp"
+                                android:text="公司简介："
+                                android:textSize="16sp"
+                                android:drawableLeft="@drawable/ic_vector_red"
+                                android:textColor="@color/textBlackColor"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+                            <TextView
+                                android:id="@+id/more"
+                                android:gravity="end"
+                                android:text="更多"
+                                android:paddingRight="10dp"
+                                android:textSize="14sp"
+                                android:textColor="@color/textBlueColor"
+                                android:layout_width="60dp"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                        <TextView
+                            android:id="@+id/info"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="10dp"
+                            android:textIsSelectable="true"
+                            android:textSize="12sp"
+                            android:lineSpacingMultiplier="1.2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <View
+                        style="@style/TenDpGrayView"/>
+                    <LinearLayout
+                        android:id="@+id/ll_recruit"
+                        android:orientation="vertical"
+                        android:background="@color/background_white"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:text="招聘"
+                            android:drawableLeft="@drawable/ic_vector_red"
+                            android:textColor="@color/textBlackColor"
+                            android:textSize="16sp"
+                            android:gravity="center_vertical"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/recycler_recruit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                        <View
+                            style="@style/TenDpGrayView"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/ll_goods"
+                        android:orientation="vertical"
+                        android:background="@color/background_white"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="产品"
+                            android:drawableLeft="@drawable/ic_vector_red"
+                            android:textColor="@color/textBlackColor"
+                            android:textSize="16sp"
+                            android:gravity="center_vertical"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textView10" />
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/recycler_goods"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                        <View
+                            style="@style/TenDpGrayView"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+        </android.support.v4.widget.SwipeRefreshLayout>
+    </LinearLayout>
+</layout>

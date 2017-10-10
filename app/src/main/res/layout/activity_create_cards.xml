@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:binding="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.lshl.api.ApiClient" />
+
+        <variable
+            name="presenter"
+            type="com.lshl.ui.me.activity.CreateCardsActivity.Presenter" />
+
+        <variable
+            name="personDataBean"
+            type="com.lshl.bean.PersonBasedataBean.InfoBean" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/app_layout_title" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:background="@android:color/white">
+
+                    <RelativeLayout
+                        android:layout_width="79dp"
+                        android:layout_height="75dp"
+                        android:layout_centerInParent="true"
+                        android:onClick="@{()->presenter.onClickOpenCamera()}">
+
+                        <ImageView
+                            android:id="@+id/iv_head"
+                            android:layout_width="75dp"
+                            android:layout_height="75dp"
+                            binding:defaultIcon="@{@drawable/ic_vector_cards_head}"
+                            binding:imageCircleLoad="@{ApiClient.getHxFriendsImage(personDataBean.avatar)}" />
+
+                        <ImageView
+                            android:id="@+id/iv_camera"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginBottom="5dp"
+                            android:src="@drawable/ic_vector_cards_camera" />
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <View style="@style/gray_line" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/white"
+                    android:divider="@drawable/ll_divider"
+                    android:orientation="vertical"
+                    android:showDividers="middle">
+                    <!--输入真实姓名-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="真实姓名"
+                            android:textColor="@color/textBlackColor" />
+
+                        <EditText
+                            android:gravity="center"
+                            android:id="@+id/edit_realname"
+                            android:maxLength="8"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:background="@null"
+                            android:hint="请输入您的真实姓名(六位以内)"
+                            android:lines="1"
+                            android:maxLines="1"
+                            android:onClick="@{(v)->presenter.onClickInputRealName(editRealname)}"
+                            android:padding="5dp"
+                            android:text="@{personDataBean.realname}"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                    <!--end 输入真实姓名-->
+
+                    <!--选择性别-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="如何称呼"
+                            android:textColor="@color/textBlackColor" />
+
+                        <RadioGroup
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+                            <View
+                                style="@style/weight_view"
+                                android:layout_weight="3" />
+
+                            <RadioButton
+                                android:id="@+id/radio_man"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@null"
+                                android:checked='@{personDataBean.sex.equals("1")?true:false}'
+                                android:drawableLeft="@drawable/ic_checked_select"
+                                android:drawablePadding="5dp"
+                                android:text="先生"
+                                android:textColor="@color/bottomUnSelectColor" />
+
+                            <View style="@style/weight_view" />
+
+                            <RadioButton
+                                android:id="@+id/radio_woman"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@null"
+                                android:checked='@{personDataBean.sex.equals("2")?true:false}'
+                                android:drawableLeft="@drawable/ic_checked_select"
+                                android:drawablePadding="5dp"
+                                android:text="女士"
+                                android:textColor="@color/bottomUnSelectColor" />
+
+                            <View
+                                style="@style/weight_view"
+                                android:layout_weight="3" />
+                        </RadioGroup>
+                    </LinearLayout>
+                    <!--end 选择性别-->
+
+                    <!--出生年月日-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{()->presenter.onClickSelectBirthday()}"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="出生年月"
+                            android:textColor="@color/textBlackColor" />
+
+                        <TextView
+                            android:id="@+id/tv_birthday"
+                            android:gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:hint="请选择您的出生年月"
+                            android:maxLines="1"
+                            android:padding="5dp"
+                            android:text="@{personDataBean.age}" />
+                    </LinearLayout>
+                    <!--end 出生年月日-->
+
+                    <!--老家地址-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{()->presenter.useAddress()}"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="老家地址"
+                            android:textColor="@color/textBlackColor" />
+
+                        <TextView
+                            android:gravity="center"
+                            android:id="@+id/tv_old_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:hint="请选择您的老家地址"
+                            android:maxLines="1"
+                            android:padding="5dp"
+                            android:text="@{personDataBean.all_origin}" />
+                    </LinearLayout>
+                    <!--end 老家地址-->
+
+                    <!--常驻地址-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{()->presenter.nowAddress()}"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="常驻地址"
+                            android:textColor="@color/textBlackColor" />
+
+                        <TextView
+                            android:gravity="center"
+                            android:id="@+id/tv_now_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:hint="请选择您的常驻地址"
+                            android:maxLines="1"
+                            android:padding="5dp"
+                            android:text="@{personDataBean.all_live}" />
+                    </LinearLayout>
+                    <!--end 常驻地址-->
+                </LinearLayout>
+
+                <Button
+                    style="@style/big_button"
+                    android:layout_marginTop="25dp"
+                    android:background="@drawable/bg_blue_btn"
+                    android:onClick="@{()->presenter.onClickSubmit()}"
+                    android:text="确定" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="*"
+                        android:textColor="@color/textRedColor" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="请填写您的真实信息"
+                        android:textColor="@color/textBlackColor" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</layout>

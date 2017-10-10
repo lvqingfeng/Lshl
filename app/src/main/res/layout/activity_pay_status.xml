@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="presenter"
+            type="com.lshl.ui.pay.PayStatusActivity.Presenter" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/app_layout_title" />
+
+        <ImageView
+            android:id="@+id/iv_err"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/pay_err"
+            android:visibility="gone" />
+
+
+        <ImageView
+            android:id="@+id/iv_suc"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:paddingRight="40dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/pay_suc" />
+
+
+        <TextView
+            android:id="@+id/tv_pay_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:text="恭喜你支付成功"
+            android:textColor="@color/textBlackColor"
+            android:textSize="20sp" />
+
+        <View style="@style/weight_view" />
+
+        <RelativeLayout
+            android:id="@+id/rl_go_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="30dp"
+            android:onClick="@{()->presenter.onClickGoHome()}"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp">
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/pay_bottom" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:text="返回首页"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</layout>

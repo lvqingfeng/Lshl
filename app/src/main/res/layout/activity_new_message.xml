@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_new_message"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.lshl.ui.me.setting.NewMessageActivity">
+
+        <include layout="@layout/app_layout_title" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <View style="@style/TenDpGrayView" />
+
+            <LinearLayout style="@style/NewMessageLLStyle">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="接收新消息通知"
+                    android:textColor="#333" />
+
+                <com.lshl.widget.SwitchView
+                    android:id="@+id/new_message"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <View style="@style/TenDpGrayView" />
+
+            <LinearLayout style="@style/NewMessageLLStyle">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="声音"
+                    android:textColor="#333" />
+
+                <com.lshl.widget.SwitchView
+                    android:id="@+id/sounds"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <View style="@style/OneDpGrayView" />
+
+            <LinearLayout style="@style/NewMessageLLStyle">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="振动"
+                    android:textColor="#333" />
+
+                <com.lshl.widget.SwitchView
+                    android:id="@+id/zhendong"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <View style="@style/TenDpGrayView" />
+
+            <LinearLayout style="@style/NewMessageLLStyle">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="勿扰模式"
+                    android:textColor="#333" />
+
+                <com.lshl.widget.SwitchView
+                    android:id="@+id/wurao"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <View style="@style/OneDpGrayView" />
+
+            <LinearLayout style="@style/NewMessageLLStyle">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="好友雷达"
+                    android:textColor="#333" />
+
+                <com.lshl.widget.SwitchView
+                    android:id="@+id/radar_request"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>

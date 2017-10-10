@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_enterprise_authentication"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.lshl.ui.me.activity.EnterpriseAuthenticationActivity">
+        <include layout="@layout/app_layout_title"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:focusable="false"
+                android:saveEnabled="false"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <View
+                    android:background="@color/windowBackgroundColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"/>
+                <LinearLayout
+                    style="@style/AddEnterpriseLL">
+                    <TextView
+                        android:textColor="@color/textBlackColor"
+                        android:text="企业名称"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:textColor="@color/textBlackColor"
+                        android:paddingLeft="15dp"
+                        android:id="@+id/name"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <View style="@style/gray_line"/>
+                <LinearLayout
+                    style="@style/AddEnterpriseLL">
+                    <TextView
+                        android:textColor="@color/textBlackColor"
+                        android:text="法人代表"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:paddingLeft="15dp"
+                        android:textColor="@color/textBlackColor"
+                        android:id="@+id/faren"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <View style="@style/gray_line"/>
+                <LinearLayout
+                    style="@style/AddEnterpriseLL">
+                    <TextView
+                        android:textColor="@color/textBlackColor"
+                        android:text="社会统一信用代码"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <EditText
+                        style="@style/BindBankCardEditTextStyle"
+                        android:paddingLeft="15dp"
+                        android:id="@+id/code"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+                <View style="@style/gray_line"/>
+                <LinearLayout
+                    style="@style/AddEnterpriseLL">
+                    <TextView
+                        android:textColor="@color/textBlackColor"
+                        android:text="企业类型"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:textColor="@color/textBlackColor"
+                        android:hint="请选择"
+                        android:background="@color/background_white"
+                        android:layout_marginLeft="15dp"
+                        android:id="@+id/type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <View style="@style/gray_line"/>
+                <LinearLayout
+                    style="@style/AddEnterpriseLL">
+                    <TextView
+                        android:textColor="@color/textBlackColor"
+                        android:text="企业地址"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:textColor="@color/textBlackColor"
+                        android:gravity="center_vertical"
+                        android:padding="15dp"
+                        android:id="@+id/address"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <View style="@style/gray_line"/>
+                <LinearLayout
+                    style="@style/AddEnterpriseLL">
+                    <TextView
+                        android:textColor="@color/textBlackColor"
+                        android:text="注册资金"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <EditText
+                        style="@style/BindBankCardEditTextStyle"
+                        android:paddingLeft="15dp"
+                        android:id="@+id/money"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <View style="@style/gray_line"/>
+                <LinearLayout
+                    style="@style/AddEnterpriseLL">
+                    <TextView
+                        android:text="成立日期"
+                        android:textColor="@color/textBlackColor"
+                        android:gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+                    <TextView
+                        android:textColor="@color/textBlackColor"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="15dp"
+                        android:id="@+id/time"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+                <View style="@style/gray_line"/>
+                <LinearLayout
+                    style="@style/AddEnterpriseLL">
+                    <TextView
+                        android:textColor="@color/textBlackColor"
+                        android:gravity="center_vertical"
+                        android:text="营业期限"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:textColor="@color/textBlackColor"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="15dp"
+                        android:id="@+id/qixian"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:padding="10dp"
+                    android:background="@color/windowBackgroundColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:textColor="@color/textBlackColor"
+                        android:layout_marginBottom="10dp"
+                        android:text="经营范围"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <EditText
+                        android:textSize="14sp"
+                        android:gravity="start"
+                        android:hint="完善企业介绍,可以更好的让别人了解你的企业..."
+                        android:padding="10dp"
+                        android:background="@drawable/bg_stroke_gray"
+                        android:id="@+id/fanwei"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:paddingLeft="10dp"
+                    android:background="@color/windowBackgroundColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:gravity="center_vertical"
+                        android:textColor="@color/textBlackColor"
+                        android:text="上传营业执照"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:layout_marginTop="10dp"
+                        android:text="注:请确保营业执照显示到当前页面方可提交"
+                        android:gravity="center_vertical"
+                        android:textSize="12sp"
+                        android:textColor="@color/textRedColor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <ImageView
+                        android:layout_marginTop="10dp"
+                        android:src="@mipmap/account_logo"
+                        android:id="@+id/image"
+                        android:scaleType="centerCrop"
+                        android:layout_width="140dp"
+                        android:layout_height="120dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:background="@color/windowBackgroundColor"
+                    android:gravity="center"
+                    android:paddingRight="30dp"
+                    android:paddingLeft="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp">
+                    <Button
+                        android:id="@+id/commit"
+                        android:background="@drawable/bg_blue_btn"
+                        android:textColor="#fff"
+                        android:text="提交"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

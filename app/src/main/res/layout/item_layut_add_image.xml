@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data class="AddImageItemBinding"></data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_goods_img"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_margin="5dp"
+            android:scaleType="centerCrop" />
+
+        <ImageButton
+            android:id="@+id/ib_delete_img"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_vector_delete_circle" />
+    </RelativeLayout>
+</layout>

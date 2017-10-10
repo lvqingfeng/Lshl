@@ -1,0 +1,228 @@
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="imageSize"
+            type="java.lang.Integer" />
+
+        <variable
+            name="presenter"
+            type="com.lshl.ui.fragment.ApplianceFragment.Presenter" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.lshl.ui.fragment.ApplianceFragment">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#fff"
+                android:orientation="vertical">
+
+                <com.bigkoo.convenientbanner.ConvenientBanner
+                    android:id="@+id/convenient_banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp" />
+                <View
+                    style="@style/TenDpGrayView"/>
+                <LinearLayout
+                    android:gravity="center_vertical"
+                    android:background="@color/windowBackgroundColor"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp">
+                    <LinearLayout
+                        android:onClick="@{()->presenter.onClickLookHelp()}"
+                        style="@style/FaXianLLStyle">
+                        <TextView
+                            android:drawableTop="@drawable/ic_vector_big_findhelper"
+                            android:text="找帮手"
+                            style="@style/FaXianBigTextViewStyle" />
+
+                        <TextView
+                            android:text="山东儿女手挽手,一切困难靠边走"
+                            style="@style/FaXianInfoTextViewStyle" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:onClick="@{()->presenter.onClickCompany()}"
+                       style="@style/FaXianLLStyle">
+                        <TextView
+                            android:drawableTop="@drawable/ic_vector_big_qiye"
+                            android:text="企业"
+                            style="@style/FaXianBigTextViewStyle" />
+
+                        <TextView
+                            android:text="看鲁商企业，扬山东风采"
+                            style="@style/FaXianInfoTextViewStyle" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:background="@color/windowBackgroundColor"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp">
+                    <LinearLayout
+                        android:onClick="@{()->presenter.onClickItemReputation()}"
+                        style="@style/FaXianLLStyle">
+                        <TextView
+                            android:drawableTop="@drawable/ic_vector_big_koubei"
+                            android:text="口碑"
+                            style="@style/FaXianBigTextViewStyle" />
+
+                        <TextView
+                            android:text="山东人民好榜样,这里来把美名扬"
+                            style="@style/FaXianInfoTextViewStyle" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:onClick="@{()->presenter.onClickItemRecruit()}"
+                        style="@style/FaXianLLStyle">
+                        <TextView
+                            android:drawableTop="@drawable/ic_vector_big_zhaopin"
+                            android:text="招贤纳士"
+                            style="@style/FaXianBigTextViewStyle" />
+
+                        <TextView
+                            android:text="聘我山东好儿郎,让您企业放光芒"
+                            style="@style/FaXianInfoTextViewStyle" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:background="@color/windowBackgroundColor"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp">
+                    <LinearLayout
+                        android:onClick="@{()->presenter.onClickyouqing()}"
+                        style="@style/FaXianLLStyle">
+                        <TextView
+                            android:drawableTop="@drawable/ic_vector_big_youqing"
+                            android:text="友情链接"
+                            style="@style/FaXianBigTextViewStyle" />
+
+                        <TextView
+                            android:text="我为老乡做推广,产品汇集财路广"
+                            style="@style/FaXianInfoTextViewStyle" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:onClick="@{()->presenter.onClickItemTrade()}"
+                        style="@style/FaXianLLStyle">
+                        <TextView
+                            android:drawableTop="@drawable/ic_vector_big_goods"
+                            android:text="自贸区"
+                            style="@style/FaXianBigTextViewStyle" />
+
+                        <TextView
+                            android:text="各行老乡在此聚,产品互换齐发展"
+                            style="@style/FaXianInfoTextViewStyle" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:visibility="gone"
+                    android:id="@+id/ll_menu_dscs"
+                    style="@style/ApplianceMenuItemLayout"
+                    android:onClick="@{()->presenter.onClickItemDscs()}"
+                    android:weightSum="1">
+
+                    <ImageView
+                        style="@style/ApplianceMenuImage"
+                        android:background="@drawable/bg_round_blue"
+                        android:src="@drawable/ic_vector_dscs" />
+
+                    <LinearLayout style="@style/AppLiceMenuLLStyle">
+
+                        <TextView
+                            style="@style/ApplianceMenuText"
+                            android:text="滴水穿石" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="一个篱笆三个桩     一个好汉三个帮" />
+                    </LinearLayout>
+
+                    <ImageView
+                        style="@style/AppRightImage"
+                        android:src="@drawable/ic_vector_right_go" />
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:id="@+id/ll_menu_project"
+                    style="@style/ApplianceMenuItemLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:onClick="@{()->presenter.onClickItemProject()}">
+
+                    <ImageView
+                        android:id="@+id/imageView4"
+                        style="@style/ApplianceMenuImage"
+                        android:background="@drawable/bg_round_yellow"
+                        android:src="@drawable/ic_vector_project" />
+
+                    <LinearLayout style="@style/AppLiceMenuLLStyle">
+
+                        <TextView
+                            style="@style/ApplianceMenuText"
+                            android:text="项目" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="你有需求     大家来帮忙" />
+                    </LinearLayout>
+
+                    <ImageView
+                        style="@style/AppRightImage"
+                        android:src="@drawable/ic_vector_right_go" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:id="@+id/ll_menu_hot"
+                    style="@style/ApplianceMenuItemLayout"
+                    android:onClick="@{()->presenter.onClickItemHot()}">
+
+                    <ImageView
+                        style="@style/ApplianceMenuImage"
+                        android:background="@drawable/bg_round_yellow"
+                        android:src="@drawable/ic_vector_hot" />
+
+                    <LinearLayout style="@style/AppLiceMenuLLStyle">
+
+                        <TextView
+                            style="@style/ApplianceMenuText"
+                            android:text="同城" />
+
+                        <TextView
+                            android:id="@+id/textView15"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="#fff"
+                            android:text="独在异乡为异客     服务站来帮助你" />
+                    </LinearLayout>
+
+                    <ImageView
+                        style="@style/AppRightImage"
+                        android:src="@drawable/ic_vector_right_go" />
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/windowBackgroundColor" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,201 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="presenter"
+            type="com.lshl.ui.dscs.fragment.VoteFragment.Presenter" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/tv_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="审核状态"
+                    android:textColor="@color/textBlackColor" />
+
+                <View style="@style/weight_view" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="截止时间："
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="2010年2月11日"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <View style="@style/gray_line" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="20dp">
+
+                <View
+                    style="@style/weight_view"
+                    android:layout_weight="1" />
+
+                <com.lshl.widget.Rectangle
+                    android:id="@+id/rectangle_support"
+                    android:layout_width="55dp"
+                    android:layout_height="155dp"
+                    app:percent_text_color="@android:color/holo_green_dark"
+                    app:percent_text_size="14sp"
+                    app:progressBarBgColor="#dc4737" />
+
+                <View
+                    style="@style/weight_view"
+                    android:layout_weight="2" />
+
+                <com.lshl.widget.Rectangle
+                    android:id="@+id/rectangle_opposition"
+                    android:layout_width="55dp"
+                    android:layout_height="155dp"
+                    app:percent_text_color="@android:color/holo_green_dark"
+                    app:percent_text_size="14sp"
+                    app:progressBarBgColor="#4cbaa6" />
+
+                <View
+                    style="@style/weight_view"
+                    android:layout_weight="2" />
+
+                <com.lshl.widget.Rectangle
+                    android:id="@+id/rectangle_wairer"
+                    android:layout_width="55dp"
+                    android:layout_height="155dp"
+                    app:percent_text_color="@android:color/holo_green_dark"
+                    app:percent_text_size="14sp"
+                    app:progressBarBgColor="#ed8a1e" />
+
+                <View
+                    style="@style/weight_view"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <View style="@style/gray_line" />
+
+            <LinearLayout
+                android:id="@+id/ll_vote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <View
+                    style="@style/weight_view"
+                    android:layout_weight="1" />
+
+                <TextView
+                    style="@style/small_btn"
+                    android:background="@drawable/bg_stroke_red"
+                    android:onClick="@{()->presenter.onClickVoteSuc()}"
+                    android:text="支持" />
+
+                <View
+                    style="@style/weight_view"
+                    android:layout_weight="2" />
+
+                <TextView
+                    style="@style/small_btn"
+                    android:background="@drawable/bg_stroke_red"
+                    android:onClick="@{()->presenter.onClickVoteOppose()}"
+                    android:text="反对" />
+
+                <View
+                    style="@style/weight_view"
+                    android:layout_weight="2" />
+
+                <TextView
+                    style="@style/small_btn"
+                    android:background="@drawable/bg_stroke_red"
+                    android:onClick="@{()->presenter.onClickVoteWaiver()}"
+                    android:text="弃权" />
+
+                <View
+                    style="@style/weight_view"
+                    android:layout_weight="1" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/un_ll_vote"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <View
+                    style="@style/weight_view"
+                    android:layout_weight="1" />
+
+                <TextView
+                    style="@style/small_btn"
+                    android:onClick="@{()->presenter.onClickUnVoteSuc()}"
+                    android:background="@drawable/bg_stroke_gray"
+                    android:text="支持" />
+
+                <View
+                    style="@style/weight_view"
+                    android:layout_weight="2" />
+
+                <TextView
+                    style="@style/small_btn"
+                    android:background="@drawable/bg_stroke_gray"
+                    android:onClick="@{()->presenter.onClickUnVoteOppose()}"
+                    android:text="反对" />
+
+                <View
+                    style="@style/weight_view"
+                    android:layout_weight="2" />
+
+                <TextView
+                    style="@style/small_btn"
+                    android:background="@drawable/bg_stroke_gray"
+                    android:onClick="@{()->presenter.onClickUnVoteWaiver()}"
+                    android:text="弃权" />
+
+                <View
+                    style="@style/weight_view"
+                    android:layout_weight="1" />
+            </LinearLayout>
+            <TextView
+                android:id="@+id/tv_vote_over"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:text="您已参与了当前的投票"
+                android:visibility="gone" />
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

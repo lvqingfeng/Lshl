@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="education_menu">
+        <item>专科</item>
+        <item>本科</item>
+        <item>硕士</item>
+        <item>博士</item>
+        <item>其他</item>
+    </string-array>
+    <string-array name="news_menu">
+        <item>滴水穿石</item>
+        <item>项目</item>
+        <item>口碑</item>
+        <item>自贸区</item>
+        <item>热门服务</item>
+        <item>招贤纳士</item>
+    </string-array>
+    <string-array name="me_menu">
+        <item>动态</item>
+        <item>会员中心</item>
+        <item>设置</item>
+        <item>我的资料</item>
+        <item>我的财富</item>
+        <item>我的商会</item>
+        <item>找帮手</item>
+        <item>口碑</item>
+        <item>自贸区</item>
+        <item>会长说</item>
+    </string-array>
+    <string-array name="appliance_menu">
+        <item>及时雨</item>
+        <item>项目</item>
+        <item>口碑</item>
+        <item>滴水石穿</item>
+        <item>自贸区</item>
+        <item>热门服务</item>
+    </string-array>
+    <string-array name="seller_info_menu">
+        <item>真实姓名</item>
+        <item> 性  别</item>
+        <item>出生年月</item>
+        <item>现居住地</item>
+        <item>老家地址</item>
+    </string-array>
+</resources>

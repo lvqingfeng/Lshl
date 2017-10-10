@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:binding="http://schemas.android.com/apk/res-auto">
+
+    <data class="ReleaseReputationImageBinding">
+
+        <variable
+            name="imageUrl"
+            type="String" />
+
+        <variable
+            name="imageSize"
+            type="Integer" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            binding:defaultIcon="@{@drawable/ease_default_image}"
+            binding:imageLoad="@{imageUrl}"
+            binding:imageSize="@{imageSize}" />
+
+    </LinearLayout>
+</layout>

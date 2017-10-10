@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="presenter"
+            type="com.lshl.ui.me.activity.SendDynamicActivity.Presenter" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_send_dynamic"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.lshl.ui.me.activity.SendDynamicActivity">
+
+        <include layout="@layout/app_layout_title" />
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/et_info"
+                        android:layout_width="match_parent"
+                        android:minLines="5"
+                        android:layout_height="wrap_content"
+                        android:background="@color/background_white"
+                        android:gravity="start"
+                        android:textSize="14sp"
+                        android:hint="说点什么吧"
+                        android:padding="8dp" />
+                    <View
+                       style="@style/gray_line"/>
+                    <LinearLayout
+                        android:background="@color/background_white"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <RelativeLayout
+                            android:id="@+id/video_layout"
+                            android:background="@color/background_white"
+                            android:layout_width="140dp"
+                            android:layout_height="140dp"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:id="@+id/video_image"
+                                android:layout_width="140dp"
+                                android:layout_height="140dp"
+                                android:scaleType="centerCrop"/>
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="#22000000"
+                                android:scaleType="center"
+                                android:src="@drawable/ic_vector_play_circle" />
+
+                        </RelativeLayout>
+
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/recycler_image"
+                            android:background="@color/background_white"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <ImageView
+                            android:id="@+id/iv_video"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:onClick="@{()->presenter.addPhoto()}"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_vector_add_image" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                   style="@style/gray_line" />
+
+                <LinearLayout
+                    android:background="@color/background_white"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:background="@color/background_white"
+                        android:layout_width="0dp"
+                        android:textColor="@color/textBlackColor"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="" />
+
+                    <TextView
+                        android:background="@color/background_white"
+                        android:id="@+id/address"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="end" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#e5e5e5" />
+
+                <com.lshl.widget.ShareLinerLayout
+                    android:visibility="gone"
+                    android:id="@+id/share_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <View
+                   style="@style/TenDpGrayView" />
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+    </LinearLayout>
+</layout>

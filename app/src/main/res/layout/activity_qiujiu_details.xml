@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+    </data>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_qiujiu_details"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.lshl.ui.me.activity.QiuJiuDetailsActivity">
+        <include layout="@layout/app_layout_title"/>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.baidu.mapapi.map.MapView
+                android:id="@+id/map_qiu"
+                android:layout_weight="3"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"/>
+            <TextView
+                android:textSize="22sp"
+                android:text="联盟成员到达情况"
+                android:gravity="center"
+                android:layout_weight="0.6"
+                android:layout_width="match_parent"
+                android:layout_height="0dp" />
+            <com.liaoinstan.springview.widget.SpringView
+                android:id="@+id/sp_qiujiudetails"
+                android:layout_weight="4"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_qiujiudetails"
+                    android:background="#e5e5e5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </com.liaoinstan.springview.widget.SpringView>
+            <LinearLayout
+                android:background="@null"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:text="结束救援"
+                    android:background="@drawable/bg_red_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

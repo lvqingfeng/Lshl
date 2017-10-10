@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:binding="http://schemas.android.com/apk/res-auto">
+
+    <data class="NewNoticeItemBinding">
+
+        <import type="android.view.View" />
+
+        <variable
+            name="noticeBean"
+            type="com.lshl.bean.NewNoticeBean.ListBean" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:background="@android:color/white"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="系统消息" />
+
+            <View style="@style/weight_view" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                binding:timeFormat2="@{noticeBean.pi_addtime}" />
+        </LinearLayout>
+
+        <View style="@style/gray_line" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="6dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/textRedColor"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp"
+                android:text="New"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:visibility="@{noticeBean.pi_status== 1 ?View.VISIBLE:View.GONE}" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:text="@{noticeBean.pi_title}"
+                android:textColor="@color/textBlackColor" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:padding="5dp"
+            android:text='@{@string/indent+noticeBean.pi_info}'
+            android:textSize="12sp" />
+
+        <View style="@style/gray_line" />
+
+        <View
+            android:layout_width="match_parent"
+            android:background="@color/windowBackgroundColor"
+            android:layout_height="10dp" />
+    </LinearLayout>
+
+</layout>

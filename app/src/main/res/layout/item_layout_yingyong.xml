@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:paddingBottom="15dp"
+        android:paddingTop="15dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:background="@color/background_white"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/dscs"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                style="@style/ApplianceMenuImage"
+                android:background="@drawable/bg_round_blue"
+                android:src="@drawable/ic_vector_dscs" />
+            <TextView
+                android:textColor="@color/textBlackColor"
+                android:layout_marginTop="10dp"
+                android:text="滴水穿石"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:gravity="center"
+            android:id="@+id/project"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                style="@style/ApplianceMenuImage"
+                android:background="@drawable/bg_round_yellow"
+                android:src="@drawable/ic_vector_project" />
+            <TextView
+                android:textColor="@color/textBlackColor"
+                android:layout_marginTop="10dp"
+                android:text="项目"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/koubei"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                style="@style/ApplianceMenuImage"
+                android:background="@drawable/bg_round_deep_blue"
+                android:src="@drawable/ic_vector_reputation"
+                android:id="@+id/imageView7" />
+
+            <TextView
+                android:textColor="@color/textBlackColor"
+                android:layout_marginTop="10dp"
+                android:text="口碑"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/goods"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                style="@style/ApplianceMenuImage"
+                android:background="@drawable/bg_round_orange"
+                android:src="@drawable/ic_vector_goods"/>
+            <TextView
+                android:layout_marginTop="10dp"
+                android:textColor="@color/textBlackColor"
+                android:text="自贸区"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/youqing"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                style="@style/ApplianceMenuImage"
+                android:background="@drawable/bg_round_blue"
+                android:src="@drawable/ic_vector_youqing" />
+            <TextView
+                android:textColor="@color/textBlackColor"
+                android:layout_marginTop="10dp"
+                android:text="友情链接"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/look_help"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                style="@style/ApplianceMenuImage"
+                android:background="@drawable/bg_round_cuilv"
+                android:src="@drawable/ic_vector_look_help" />
+            <TextView
+                android:textColor="@color/textBlackColor"
+                android:layout_marginTop="10dp"
+                android:text="找帮手"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/service"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                style="@style/ApplianceMenuImage"
+                android:background="@drawable/bg_round_yellow"
+                android:src="@drawable/ic_vector_hot" />
+            <TextView
+                android:textColor="@color/textBlackColor"
+                android:layout_marginTop="10dp"
+                android:text="同城"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

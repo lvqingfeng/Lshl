@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_edit_now_address"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.lshl.ui.me.activity.EditNowAddressActivity">
+        <include layout="@layout/app_layout_title"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:gravity="center_vertical"
+                android:padding="5dp"
+                android:text="常驻地址"
+                android:background="@color/windowBackgroundColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:background="#fff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_weight="1"
+                    android:text="所在地区"
+                    android:textColor="#333"
+                    android:padding="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/shi"
+                    android:drawableRight="@drawable/ic_vector_right_go"
+                    android:layout_weight="2"
+                    android:textColor="#333"
+                    android:padding="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <View
+                style="@style/gray_line"/>
+            <LinearLayout
+                android:background="#fff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <EditText
+                    android:background="@null"
+                    android:singleLine="true"
+                    android:maxLength="10"
+                    android:id="@+id/xian"
+                    android:hint="区、县(必填)"
+                    android:gravity="center"
+                    android:textColor="#333"
+                    android:padding="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <View
+                    style="@style/gray_line"/>
+                <EditText
+                    android:background="@null"
+                    android:singleLine="true"
+                    android:id="@+id/details"
+                    android:maxLength="16"
+                    android:hint="详细地址(选填)"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/windowBackgroundColor">
+                <Button
+                    android:id="@+id/btn_commit"
+                    android:text="保    存"
+                    style="@style/red_button" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="presenter"
+            type="com.lshl.ui.me.activity.MyWealthActivity.Presenter"/>
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:background="@color/windowBackgroundColor"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/app_layout_title" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@drawable/ll_divider"
+            android:dividerPadding="8dp"
+            android:background="@android:color/white"
+            android:orientation="vertical"
+            android:showDividers="middle">
+
+            <TextView
+                android:onClick="@{()->presenter.change()}"
+                android:drawableLeft="@drawable/ic_vector_wealth_change"
+                style="@style/MyWealthTextViewStyle"
+                android:drawableRight="@drawable/ic_vector_right_go"
+                android:text="零钱" />
+
+            <TextView
+                android:onClick="@{()->presenter.accountNumber()}"
+                android:drawableLeft="@drawable/ic_vector_wealth_person"
+                style="@style/MyWealthTextViewStyle"
+                android:drawableRight="@drawable/ic_vector_right_go"
+                android:text="账号" />
+
+            <TextView
+                android:onClick="@{()->presenter.record()}"
+                android:drawableLeft="@drawable/ic_vector_wealth_record"
+                style="@style/MyWealthTextViewStyle"
+                android:drawableRight="@drawable/ic_vector_right_go"
+                android:text="记录" />
+
+            <TextView
+                android:visibility="gone"
+                android:onClick="@{()->presenter.mutual()}"
+                android:drawableLeft="@drawable/ic_vector_wealth_repayment"
+                style="@style/MyWealthTextViewStyle"
+                android:drawableRight="@drawable/ic_vector_right_go"
+                android:text="互助还款" />
+
+            <TextView
+                android:visibility="gone"
+                android:onClick="@{()->presenter.contribution()}"
+                android:drawableLeft="@drawable/ic_vector_wealth_contribution"
+                style="@style/MyWealthTextViewStyle"
+                android:drawableRight="@drawable/ic_vector_right_go"
+                android:text="捐款" />
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

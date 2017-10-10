@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:orientation="vertical">
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/background_white"
+                    android:orientation="vertical">
+
+                    <com.bigkoo.convenientbanner.ConvenientBanner
+                        android:id="@+id/cb_banner"
+                        android:layout_width="match_parent"
+                        android:layout_height="185dp"
+                        android:background="@drawable/account_logo"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <View
+                            style="@style/TenDpGrayView"/>
+
+                        <RadioGroup
+                            android:id="@+id/rdGroup_service"
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:background="@color/background_white"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingBottom="8dp"
+                            android:paddingTop="8dp">
+
+                            <RadioButton
+                                android:id="@+id/rb_direct_sales"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@color/background_white"
+                                android:button="@null"
+                                android:drawableTop="@drawable/ic_vector_new_lushang"
+                                android:gravity="center"
+                                android:text="鲁商直营"/>
+
+                            <RadioButton
+                                android:id="@+id/rb_local_service"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@color/background_white"
+                                android:button="@null"
+                                android:drawableTop="@drawable/ic_vector_new_lushang"
+                                android:gravity="center"
+                                android:text="本地服务"/>
+
+                            <RadioButton
+                                android:id="@+id/rb_service_station"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@color/background_white"
+                                android:button="@null"
+                                android:drawableTop="@drawable/ic_vector_new_lushang"
+                                android:gravity="center"
+                                android:text="服务站"/>
+                        </RadioGroup>
+
+                        <View
+                            style="@style/TenDpGrayView"/>
+                    </LinearLayout>
+
+                    <WebView
+                        android:id="@+id/webView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"></WebView>
+
+                </LinearLayout>
+            </ScrollView>
+        </android.support.v4.widget.SwipeRefreshLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/app_bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="246dp"
+            android:fitsSystemWindows="true">
+
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:id="@+id/collapsing_toolbar_layout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                app:contentScrim="@color/BaseColor"
+                app:expandedTitleMarginStart="48dp"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+                <!--
+                 app:layout_collapseMode="parallax"
+                这个属性可以实现视觉差效果-->
+                <com.bigkoo.convenientbanner.ConvenientBanner
+                    android:id="@+id/convenient_banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fitsSystemWindows="true"
+                    app:canLoop="true"
+                    app:layout_collapseMode="parallax"
+                    app:layout_collapseParallaxMultiplier="0.7" />
+
+                <!--       <ImageView
+                           android:id="@+id/image_shop_icon"
+                           android:layout_width="match_parent"
+                           android:layout_height="match_parent"
+                           android:fitsSystemWindows="true"
+                           android:scaleType="fitXY"
+                           app:layout_collapseMode="parallax"
+                           app:layout_collapseParallaxMultiplier="0.7" />-->
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:contentInsetStart="0dp"
+                    app:layout_collapseMode="pin"
+                    app:title="">
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <ImageView
+                            android:padding="10dp"
+                            android:id="@+id/iv_back"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/title_back_margin"
+                            android:src="@drawable/ic_vector_back" />
+                        <EditText
+                            android:textColorHint="@color/textBlackColor"
+                            android:imeOptions="actionSearch"
+                            android:singleLine="true"
+                            android:layout_weight="1"
+                            android:id="@+id/edit_search_content"
+                            android:layout_width="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:hint="请输入您要搜索的内容"
+                            android:layout_marginLeft="10dp"
+                            android:background="@drawable/edit_bg"
+                            android:layout_height="wrap_content"
+                            android:maxLines="1"
+                            android:padding="4dp"
+                            android:textSize="14sp" />
+                        <ImageView
+                            android:padding="7dp"
+                            android:id="@+id/search"
+                            android:src="@drawable/ic_vector_big_search"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <ImageView
+                            android:id="@+id/iv_auto_renew"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp"
+                            android:src="@drawable/ic_vector_auto_renew" />
+                    </LinearLayout>
+                    <RelativeLayout
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:padding="10dp"
+                            android:id="@+id/iv_title_back"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/title_back_margin"
+                            android:src="@drawable/ic_vector_back" />
+
+                        <TextView
+                            android:id="@+id/title_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="自贸区"
+                            android:textColor="@color/colorTitleColor"
+                            android:textSize="18sp"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/iv_title_search"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:src="@drawable/ic_vector_big_search" />
+                        <ImageView
+                            android:id="@+id/iv_title_auto_renew"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_toLeftOf="@id/iv_title_search"
+                            android:layout_toStartOf="@id/iv_title_search"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp"
+                            android:src="@drawable/ic_vector_auto_renew" />
+
+
+                    </RelativeLayout>
+
+                </android.support.v7.widget.Toolbar>
+
+            </android.support.design.widget.CollapsingToolbarLayout>
+
+            <RadioGroup
+                android:id="@+id/radio_group_screen_layout"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@android:color/white"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radio_btn_screen_city"
+                    style="@style/TradeScreenAttrItem"
+                    android:text="筛选城市" />
+
+                <RadioButton
+                    android:id="@+id/radio_btn_classify"
+                    style="@style/TradeScreenAttrItem"
+                    android:text="分类" />
+
+                <RadioButton
+                    android:id="@+id/radio_btn_price"
+                    style="@style/TradeScreenAttrItem"
+                    android:text="价位" />
+            </RadioGroup>
+
+
+        </android.support.design.widget.AppBarLayout>
+
+        <com.jcodecraeer.xrecyclerview.XRecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@mipmap/kongkongruye"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/btn_add"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/textRedColor"
+            android:layout_gravity="end|bottom"
+            android:layout_marginBottom="45dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginRight="30dp"
+            android:src="@drawable/ic_vector_add" />
+    </android.support.design.widget.CoordinatorLayout>
+
+</layout>
+
+

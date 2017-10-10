@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:binding="http://schemas.android.com/apk/res-auto">
+
+    <data class="SHTalkAboutItemBinding">
+
+        <import type="com.lshl.api.ApiClient" />
+
+        <variable
+            name="businessName"
+            type="String" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="talkAboutBean"
+            type="com.lshl.bean.SHTalkAboutListBean.ListBean" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_white_shadow"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/head_image"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                binding:defaultIcon="@{@drawable/ease_default_avatar}"
+                binding:imageCircleLoad="@{ApiClient.getHxFriendsImage(talkAboutBean.avatar)}" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="@{talkAboutBean.realname}"
+                        android:textColor="@color/textBlackColor"
+                        android:textSize="16sp" />
+
+                    <View style="@style/weight_view" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        binding:timeDate="@{talkAboutBean.bct_addtime}" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/image"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <View style="@style/weight_view" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="@{talkAboutBean.cityname}" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:text='@{talkAboutBean.bct_info}'
+            android:textColor="@color/textBlackColor" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:visibility="@{talkAboutBean.bct_contact == null ? View.GONE : View.VISIBLE }">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{businessName}"
+                    android:textColor="#1e7eb4" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
+                    android:text="回复"
+                    android:textColor="@color/textBlackColor" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{talkAboutBean.realname}"
+                    android:textColor="#1e7eb4" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text='@{talkAboutBean.bct_contact}' />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:background="@color/windowBackgroundColor"
+            android:layout_height="8dp" />
+
+    </LinearLayout>
+</layout>

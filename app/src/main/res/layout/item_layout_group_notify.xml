@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <import type="com.lshl.db.bean.InviteMessage.InviteMesageStatus"/>
+
+        <import type="com.lshl.api.ApiClient"/>
+
+        <variable
+            name="infoBean"
+            type="com.lshl.db.bean.InviteMessage"/>
+
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/ll_notify_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="4dp">
+
+            <ImageView
+                android:id="@+id/iv_group_image"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_margin="10dp"
+                android:scaleType="fitXY"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingTop="5dp">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{infoBean.realname ?? infoBean.from}"
+                    android:textColor="@color/textBlackColor"
+                    android:textSize="18sp"
+                    android:visibility="@{infoBean.group ? View.GONE : View.VISIBLE}"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{infoBean.groupName}"
+                    android:textColor="@color/textBlackColor"
+                    android:textSize="18sp"
+                    android:visibility="@{infoBean.group ? View.VISIBLE : View.GONE}"/>
+
+                <TextView
+                    android:id="@+id/tv_group_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:singleLine="true"
+
+                    android:textColor="@color/textBlackColor"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:id="@+id/tv_notify_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:singleLine="true"/>
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_show_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="@{infoBean.disposeRequest}"
+                android:visibility="@{infoBean.dispose ? View.VISIBLE : View.GONE}"/>
+
+            <Button
+                android:id="@+id/btn_start_chat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="开始聊天"
+                android:visibility="@{infoBean.status == InviteMesageStatus.BEAGREED ? View.VISIBLE :View.GONE}"/>
+
+            <LinearLayout
+                android:id="@+id/ll_dispose_select"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center_vertical"
+                android:visibility="@{infoBean.dispose ? View.GONE : View.VISIBLE}">
+
+                <Button
+                    android:id="@+id/btn_agree"
+                    style="@style/small_btn"
+                    android:background="@drawable/bg_solid_gray"
+                    android:text="同意"/>
+
+
+                <Button
+                    android:id="@+id/btn_refuse"
+                    style="@style/small_btn"
+                    android:background="@drawable/bg_solid_gray"
+                    android:layout_marginTop="8dp"
+                    android:text="拒绝"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <View style="@style/gray_line"/>
+    </LinearLayout>
+</layout>

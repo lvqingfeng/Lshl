@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_default_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.lshl.ui.me.activity.DefaultImageActivity">
+        <include layout="@layout/app_layout_title"/>
+        <ImageView
+            android:scaleType="fitXY"
+            android:visibility="gone"
+            android:id="@+id/default_image"
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="180dp" />
+        <com.liaoinstan.springview.widget.SpringView
+            android:id="@+id/spring_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:background="@color/windowBackgroundColor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </com.liaoinstan.springview.widget.SpringView>
+    </LinearLayout>
+</layout>

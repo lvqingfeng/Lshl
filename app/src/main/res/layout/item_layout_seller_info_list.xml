@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data class="SellerInfoItemBinding">
+
+        <variable
+            name="info"
+            type="com.lshl.bean.InfoContrastBean" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/tv_item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:text="@{info.name}"
+            android:textColor="@color/textBlackColor"
+            android:textSize="16sp" />
+
+        <View style="@style/weight_view" />
+
+        <TextView
+            android:id="@+id/tv_item_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{info.value}" />
+    </LinearLayout>
+</layout>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="presenter"
+            type="com.lshl.ui.appliance.activity.ApplianceDscsActivity.Presenter"/>
+    </data>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.hyphenate.chatuidemo.lsjt_yinyong_fragment.ui.ui.YingyongSdscActivity">
+        <include layout="@layout/app_layout_title"/>
+        <com.bigkoo.convenientbanner.ConvenientBanner
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="180dp" />
+        <LinearLayout
+            android:background="#fff"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+                <Button
+                    android:drawablePadding="5dp"
+                    android:drawableLeft="@drawable/ic_vector_welfare"
+                    android:onClick="@{()->presenter.mutual()}"
+                    android:id="@+id/btn_yydscs_gongyi"
+                    android:padding="5dp"
+                    android:gravity="center"
+                    android:text="公益"
+                    android:background="@null"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+                <Button
+                    android:drawablePadding="5dp"
+                    android:drawableLeft="@drawable/ic_vector_forhelp"
+                    android:onClick="@{()->presenter.forHelp()}"
+                    android:id="@+id/btn_yydscs_help"
+                    android:padding="5dp"
+                    android:gravity="center"
+                    android:text="互助"
+                    android:background="@null"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:drawableLeft="@drawable/ic_vector_history_bill"
+                    android:onClick="@{()->presenter.historyBill()}"
+                    android:id="@+id/btn_yydscs_bill"
+                    android:drawablePadding="5dp"
+                    android:padding="5dp"
+                    android:gravity="center"
+                    android:text="账单"
+                    android:background="@null"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+        <View
+            style="@style/TenDpGrayView"/>
+        <com.liaoinstan.springview.widget.SpringView
+            android:id="@+id/sp_yydscs_sp"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            <android.support.v7.widget.RecyclerView
+                android:background="@color/windowBackgroundColor"
+                android:id="@+id/recycler_dscs"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </com.liaoinstan.springview.widget.SpringView>
+
+    </LinearLayout>
+
+</layout>

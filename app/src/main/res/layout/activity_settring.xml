@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="presenter"
+            type="com.lshl.ui.me.setting.SettingActivity.Presenter" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/app_layout_title" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/windowBackgroundColor"
+            android:orientation="vertical">
+
+            <View style="@style/TenDpGrayView" />
+
+            <TextView
+                style="@style/SetTextViewStyle"
+                android:drawableRight="@drawable/ic_vector_right_go"
+                android:onClick="@{()->presenter.security()}"
+                android:text="账号与安全" />
+
+            <View style="@style/TenDpGrayView" />
+
+            <TextView
+                style="@style/SetTextViewStyle"
+                android:drawableRight="@drawable/ic_vector_right_go"
+                android:onClick="@{()->presenter.newMessage()}"
+                android:text="新消息通知" />
+
+            <View style="@style/OneDpGrayView" />
+
+            <TextView
+                style="@style/SetTextViewStyle"
+                android:drawableRight="@drawable/ic_vector_right_go"
+                android:onClick="@{()->presenter.onClickBlackList()}"
+                android:text="黑名单" />
+
+            <View style="@style/OneDpGrayView" />
+            <TextView
+                style="@style/SetTextViewStyle"
+                android:drawableRight="@drawable/ic_vector_right_go"
+                android:onClick="@{()->presenter.onClickExplain()}"
+                android:text="使用说明" />
+
+            <View style="@style/OneDpGrayView" />
+            <TextView
+                style="@style/SetTextViewStyle"
+                android:drawableRight="@drawable/ic_vector_right_go"
+                android:onClick="@{()->presenter.onClickSuggest()}"
+                android:text="意见建议" />
+
+            <View style="@style/OneDpGrayView" />
+            <TextView
+                style="@style/SetTextViewStyle"
+                android:drawableRight="@drawable/ic_vector_right_go"
+                android:onClick="@{()->presenter.aboutUs()}"
+                android:text="关于我们" />
+
+            <View style="@style/TenDpGrayView" />
+
+            <TextView
+                style="@style/SetTextViewStyle"
+                android:drawableRight="@drawable/ic_vector_right_go"
+                android:onClick="@{()->presenter.exitLogin()}"
+                android:text="退出当前账号" />
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:binding="http://schemas.android.com/apk/res-auto">
+
+    <data class="InvestListItemBinding">
+
+        <variable
+            name="bean"
+            type="com.lshl.bean.InvestListBean.ListBean" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{bean.dm_money}"
+            android:textColor="@color/textBlackColor" />
+
+        <View style="@style/weight_view" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            binding:time="@{bean.dm_addtime}" />
+    </LinearLayout>
+</layout>

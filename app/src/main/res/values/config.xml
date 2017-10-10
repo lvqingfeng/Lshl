@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--公益详情-->
+    <string-array name="WelfareDetails">
+        <item>id,pw_id</item>
+        <item>status,pw_status</item>
+        <item>type,pw_type</item>
+        <item>uid,pw_uid</item>
+        <item>title,pw_project_name</item>
+        <item>money,pw_project_money</item>
+        <item>info,pw_project_info</item>
+        <item>addTime,pw_addtime</item>
+        <item>address,pw_address</item>
+        <item>auditInfo,pw_audit_info</item>
+        <item>auditTime,pw_audit_time</item>
+        <item>f_vote_total_number,f_vote_total_number</item>
+        <item>f_vote_support,f_vote_support</item>
+        <item>f_vote_opposition,f_vote_opposition</item>
+        <item>f_vote_wairer,f_vote_wairer</item>
+        <item>f_vote_endtime,f_vote_endtime</item>
+
+        <item>s_vote_total_number,s_vote_total_number</item>
+        <item>s_vote_support,s_vote_support</item>
+        <item>s_vote_opposition,s_vote_opposition</item>
+        <item>s_vote_wairer,s_vote_wairer</item>
+        <item>s_vote_endtime,s_vote_endtime</item>
+
+        <item>t_vote_total_number,t_vote_total_number</item>
+        <item>t_vote_support,t_vote_support</item>
+        <item>t_vote_opposition,t_vote_opposition</item>
+        <item>t_vote_wairer,t_vote_wairer</item>
+        <item>t_vote_endtime,t_vote_endtime</item>
+
+        <item>name,name</item>
+        <item>allmember,allmember</item>
+        <item>payment,pw_paymen</item>
+        <item>payment_time,pw_payment_time</item>
+        <item>payment_info,pw_payment_info</item>
+        <item>payment_img,pw_payment_img</item>
+
+        <item>pw_receipt_info,pw_receipt_info</item>
+
+    </string-array>
+    <!--互助详情-->
+    <string-array name="AidDetails">
+        <item>id,ma_id</item>
+        <item>status,ma_status</item>
+        <item>uid,ma_uid</item>
+        <item>title,ma_project_name</item>
+        <item>money,ma_project_money</item>
+        <item>info,ma_project_info</item>
+        <item>addTime,ma_addtime</item>
+        <item>auditInfo,ma_audit_info</item>
+        <item>auditTime,ma_audit_time</item>
+
+        <item>f_vote_total_number,f_vote_total_number</item>
+        <item>f_vote_support,f_vote_support</item>
+        <item>f_vote_opposition,f_vote_opposition</item>
+        <item>f_vote_wairer,f_vote_wairer</item>
+        <item>f_vote_endtime,f_vote_endtime</item>
+
+        <item>s_vote_total_number,s_vote_total_number</item>
+        <item>s_vote_support,s_vote_support</item>
+        <item>s_vote_opposition,s_vote_opposition</item>
+        <item>s_vote_wairer,s_vote_wairer</item>
+        <item>s_vote_endtime,s_vote_endtime</item>
+
+        <item>t_vote_total_number,t_vote_total_number</item>
+        <item>t_vote_support,t_vote_support</item>
+        <item>t_vote_opposition,t_vote_opposition</item>
+        <item>t_vote_wairer,t_vote_wairer</item>
+        <item>t_vote_endtime,t_vote_endtime</item>
+
+        <item>name,name</item>
+        <item>allmember,allmember</item>
+        <item>payment,ma_payment</item>
+        <item>payment_time,ma_payment_time</item>
+        <item>payment_info,ma_payment_info</item>
+        <item>payment_img,pw_payment_img</item>
+    </string-array>
+</resources>

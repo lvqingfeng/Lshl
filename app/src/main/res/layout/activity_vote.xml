@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:binding="http://schemas.android.com/apk/res-auto"
+    xmlns:cb="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+        <include layout="@layout/app_layout_title" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:orientation="horizontal"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="当前支持率"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp" />
+
+            <View style="@style/weight_view" />
+
+            <TextView
+                android:id="@+id/tv_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/textBlackColor"
+                android:textSize="16sp" />
+            <TextView
+                android:id="@+id/tv_status_s"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="中"
+                android:visibility="gone"
+                android:textColor="@color/textBlackColor"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <com.lshl.widget.CBProgressBar
+            android:id="@+id/cb_progress_bar"
+            android:layout_width="154dp"
+            android:layout_height="154dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="40dp"
+            cb:orientation="circle"
+            cb:percent_text_color="@color/textBlackColor"
+            cb:percent_text_size="22sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_agree_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/textBlackColor"
+             />
+
+            <View style="@style/weight_view" />
+
+            <TextView
+                android:id="@+id/tv_oppose_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/textBlackColor"
+
+         />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_agree"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_red_btn"
+                android:text="暖心支持"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/btn_oppose"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_green_btn"
+                android:text="狠心反对"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>
+

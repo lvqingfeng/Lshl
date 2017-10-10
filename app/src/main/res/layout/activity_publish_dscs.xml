@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="android.text.TextUtils" />
+
+        <variable
+            name="guaranteeNum"
+            type="Integer" />
+
+        <variable
+            name="type"
+            type="com.lshl.ui.me.dscs.activity.PublishDscsActivity.PublishType" />
+
+        <variable
+            name="presenter"
+            type="com.lshl.ui.me.dscs.activity.PublishDscsActivity.Presenter" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/app_layout_title" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/windowBackgroundColor"
+                android:paddingBottom="45dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="14dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text='@{type.name+"标题"}'
+                            android:textColor="@color/textBlackColor" />
+
+                        <EditText
+                            android:id="@+id/edit_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:hint="请填写标题"
+                            android:paddingLeft="10dp"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <View style="@style/gray_line" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"
+                        android:orientation="horizontal"
+                        android:padding="14dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text='@{type.name+"金额"}'
+                            android:textColor="@color/textBlackColor" />
+
+                        <EditText
+                            android:id="@+id/edit_money"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:hint="请填写您的金额"
+                            android:inputType="numberDecimal"
+                            android:paddingLeft="10dp"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <View style="@style/gray_line" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"
+                        android:orientation="horizontal"
+                        android:padding="14dp"
+                        android:visibility="@{type == type.GOOD?View.VISIBLE:View.GONE}">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="地\u3000\u3000址"
+                            android:textColor="@color/textBlackColor" />
+
+                        <TextView
+                            android:id="@+id/tv_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:onClick="@{()->presenter.onClickShowPop()}"
+                            android:paddingLeft="10dp"
+                            android:text="请选择公益活动的地址"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <View style="@style/gray_line" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{()->presenter.onClickSelectDate()}"
+                        android:orientation="horizontal"
+                        android:padding="14dp"
+                        android:visibility="@{type == type.GOOD?View.GONE:View.VISIBLE}">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="还款时间"
+                            android:textColor="@color/textBlackColor" />
+
+                        <TextView
+                            android:id="@+id/tv_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="请选择您的还款时间" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"
+                        android:orientation="horizontal"
+                        android:padding="14dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="承诺还款"
+                            android:textColor="@color/textBlackColor" />
+
+                        <EditText
+                            android:id="@+id/edit_donate_money"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:gravity="right"
+                            android:hint="请输入您承诺捐款的金额"
+                            android:inputType="numberDecimal"
+                            android:paddingLeft="10dp"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <View style="@style/gray_line" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"
+                        android:onClick="@{()->presenter.onClickAddGuarantee()}"
+                        android:orientation="horizontal"
+                        android:padding="14dp"
+                        android:visibility="@{type == type.GOOD?View.GONE:View.VISIBLE}">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="担  保  人"
+                            android:textColor="@color/textBlackColor" />
+
+                        <TextView
+                            android:id="@+id/tv_guarantee_num"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:gravity="right"
+                            android:paddingLeft="10dp"
+                            android:text='@{String.valueOf(guaranteeNum)}'
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="人" />
+                    </LinearLayout>
+
+                    <View style="@style/gray_line" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:background="@color/windowBackgroundColor" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"
+                        android:orientation="vertical">
+                        <!--    android:text='@{type.name+"详情"}'-->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:text='@{type.name+"详情"}'
+                            android:textColor="@color/textBlackColor" />
+
+                        <EditText
+                            android:id="@+id/edit_info"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/bg_solid_gray"
+                            android:gravity="left"
+                            android:hint="请描述下您要发起的内容（请不要出现表情或特殊字符）"
+                            android:lines="8"
+                            android:padding="10dp"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <View style="@style/gray_line" />
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:background="@color/windowBackgroundColor" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:text="上传照片（相关证明）"
+                            android:textColor="@color/textBlackColor" />
+
+                    </LinearLayout>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recycler_images"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:background="@color/windowBackgroundColor" />
+
+                    <com.lshl.widget.ShareLinerLayout
+                        android:id="@+id/share_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:background="@color/windowBackgroundColor" />
+                </LinearLayout>
+
+            </ScrollView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:onClick="@{()->presenter.onClickSubmit()}"
+                android:text="提交"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="reputationType"
+            type="com.lshl.Constant.ReputationType" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/app_layout_title" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical">
+
+
+                <EditText
+                    android:id="@+id/edit_title"
+                    android:maxLength="20"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@android:color/white"
+                    android:gravity="center_vertical"
+                    android:hint="内容标题请限制在二十字以内"
+                    android:singleLine="true"
+                    android:padding="10dp"
+                    android:textSize="14sp" />
+
+
+                <EditText
+                    android:id="@+id/edit_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@android:color/white"
+                    android:gravity="left"
+                    android:hint="此时此刻，想与大家分享什么？"
+                    android:minLines="3"
+                    android:padding="10dp"
+                    android:textSize="14sp" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:padding="10dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@android:color/white"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:id="@+id/ll_select_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="选择地点" />
+
+                        <View style="@style/weight_view" />
+
+                        <TextView
+                            android:id="@+id/tv_city_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="定位中..." />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_vector_right_go" />
+                    </LinearLayout>
+
+                    <View style="@style/gray_line" />
+
+                    <com.lshl.widget.ShareLinerLayout
+                        android:visibility="gone"
+                        android:id="@+id/share_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_submit_reputation"
+                    style="@style/big_button"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginTop="35dp"
+                    android:background="@{reputationType == reputationType.RED ? @drawable/bg_red_btn :@drawable/bg_black_btn}"
+                    android:text='@{reputationType == reputationType.RED ?"红榜发布":"黑榜发布"}' />
+            </LinearLayout>
+
+        </ScrollView>
+    </LinearLayout>
+
+</layout>

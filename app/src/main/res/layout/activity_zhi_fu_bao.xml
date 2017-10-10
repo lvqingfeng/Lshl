@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_zhi_fu_bao"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.lshl.ui.me.activity.ZhiFuBaoActivity">
+        <include layout="@layout/app_layout_title"/>
+        <LinearLayout
+            android:paddingTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:background="#fff"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textColor="#333"
+                    android:textSize="16sp"
+                    android:text="支付宝:"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <EditText
+                    android:textSize="14sp"
+                    android:padding="10dp"
+                    android:background="@null"
+                    android:id="@+id/zhifubao"
+                    android:hint="请输入您的支付宝账号"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:background="#fafafa"
+                android:padding="20dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_marginTop="50dp"
+                    android:gravity="center"
+                    android:paddingBottom="10dp"
+                    android:text="财富账号只做收款账号,为正常收款请正确填写"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    style="@style/RedButton"
+                    android:text="保     存"
+                    android:id="@+id/button" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

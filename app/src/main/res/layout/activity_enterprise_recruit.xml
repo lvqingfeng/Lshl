@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_enterprise_recruit"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.lshl.ui.appliance.job.EnterpriseRecruitActivity">
+
+        <include layout="@layout/app_layout_title" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:fillViewport="true"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <Space style="@style/TenDpGrayView" />
+                <LinearLayout style="@style/BaseLinerLayoutStyle">
+                    <TextView
+                        android:textSize="16sp"
+                        style="@style/BaseDataTextView"
+                        android:text="标题信息" />
+
+                    <EditText
+                        android:id="@+id/job_name"
+                        android:singleLine="true"
+                        style="@style/EditCenterBackground"
+                        android:hint="如:Android开发"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <View style="@style/OneDpGrayView" />
+
+                <LinearLayout style="@style/BaseLinerLayoutStyle">
+
+                    <TextView
+                        android:textSize="16sp"
+                        style="@style/BaseDataTextView"
+                        android:text="薪资待遇" />
+                    <EditText
+                        android:id="@+id/low_money"
+                        android:textSize="12sp"
+                        android:singleLine="true"
+                        android:hint="最低薪资"
+                        android:background="@null"
+                        android:inputType="number|numberDecimal"
+                        android:gravity="center"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent" />
+                    <TextView
+                        android:text="K 至"
+                        style="@style/BaseDataTextView" />
+                    <EditText
+                        android:id="@+id/high_money"
+                        android:inputType="number|numberDecimal"
+                        android:textSize="12sp"
+                        android:singleLine="true"
+                        android:background="@null"
+                        android:hint="最高薪资"
+                        android:gravity="center"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent" />
+                    <TextView
+                        android:text="K"
+                        style="@style/BaseDataTextView" />
+                </LinearLayout>
+
+                <View style="@style/OneDpGrayView" />
+                <LinearLayout
+                    style="@style/BaseLinerLayoutStyle">
+                    <TextView
+                        android:textSize="16sp"
+                        style="@style/BaseDataTextView"
+                        android:text="联系电话" />
+                    <EditText
+                        android:singleLine="true"
+                        android:maxLength="11"
+                        android:inputType="numberSigned"
+                        android:id="@+id/phone"
+                        style="@style/EditCenterBackground"
+                        android:hint="如:188-8888-8888"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <View style="@style/TenDpGrayView" />
+                <LinearLayout style="@style/BaseLinerLayoutStyle"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:textSize="16sp"
+                        style="@style/BaseDataTextView"
+                        android:text="学位学历" />
+
+                    <TextView
+                        android:textColor="@color/textBlackColor"
+                        android:id="@+id/education"
+                        style="@style/EditCenterBackground"
+                        android:drawableRight="@drawable/ic_vector_right_go"
+                        android:hint="请选择学历"
+                        android:textSize="12sp" />
+                </LinearLayout>
+                <View style="@style/OneDpGrayView" />
+
+                <LinearLayout style="@style/BaseLinerLayoutStyle"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:textSize="16sp"
+                        style="@style/BaseDataTextView"
+                        android:text="工作地点" />
+
+                    <TextView
+                        android:textColor="@color/textBlackColor"
+                        android:id="@+id/address"
+                        style="@style/EditCenterBackground"
+                        android:drawableRight="@drawable/ic_vector_right_go"
+                        android:hint="请选择地址"
+                        android:textSize="12sp" />
+                </LinearLayout>
+                <View
+                   style="@style/TenDpGrayView"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:background="@color/background_white"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:textSize="16sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="工作要求"
+                        android:textColor="@color/textBlackColor" />
+                    <EditText
+                        android:id="@+id/demand"
+                        android:gravity="start"
+                        android:hint="请输入工作要求"
+                        android:padding="8dp"
+                        android:maxLength="200"
+                        android:textSize="14sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lines="6"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/bg_stroke_gray" />
+                </LinearLayout>
+                <View style="@style/OneDpGrayView" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:background="@color/background_white"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:textSize="16sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="岗位介绍"
+                        android:textColor="@color/textBlackColor" />
+                    <EditText
+                        android:id="@+id/info"
+                        android:gravity="start"
+                        android:hint="请输入企业介绍"
+                        android:padding="8dp"
+                        android:textSize="14sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lines="6"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/bg_stroke_gray" />
+                </LinearLayout>
+
+                <View style="@style/TenDpGrayView" />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="bottom"
+                    android:background="@color/background_white">
+                    <Button
+                        android:id="@+id/btn_commit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/bg_blue_btn"
+                        android:text="发     布"
+                        android:textColor="@color/background_white" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data class="AddGuaranteeItemBinding">
+
+        <import type="android.view.View" />
+
+        <variable
+            name="guaranteeBean"
+            type="com.lshl.ui.me.dscs.adapter.AddGuaranteeAdapter.GuaranteeBean" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <EditText
+            android:id="@+id/edit_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/bg_stroke_gray"
+            android:enabled="@{!guaranteeBean.suc}"
+            android:hint="姓名"
+            android:maxLines="1"
+            android:padding="7dp"
+            android:text="@{guaranteeBean.name}"
+            android:textSize="14sp" />
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/edit_id_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:background="@drawable/bg_stroke_gray"
+            android:enabled="@{!guaranteeBean.suc}"
+            android:hint="身份证号"
+            android:maxLines="1"
+            android:padding="7dp"
+            android:text="@{guaranteeBean.idCard}"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_add"
+            style="@style/small_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/bg_stroke_gray"
+            android:text="确认"
+            android:visibility="@{guaranteeBean.suc?View.GONE:View.VISIBLE}" />
+    </LinearLayout>
+</layout>

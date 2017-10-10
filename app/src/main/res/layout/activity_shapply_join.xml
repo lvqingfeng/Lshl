@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="presenter"
+            type="com.lshl.ui.business.activity.SHApplyJoinActivity.Presenter" />
+
+        <variable
+            name="joinName"
+            type="String" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/app_layout_title" />
+
+
+       <!-- <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_white_shadow"
+            android:padding="10dp"
+            android:text="@{String.format(@string/join_name_s,joinName)}"
+            android:textColor="@color/textBlackColor"
+            android:textSize="16sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_white_shadow"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="入会说明"
+                android:textColor="@color/textBlackColor"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/edit_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bg_solid_gray"
+                android:gravity="top"
+                android:hint="请填写入会说明，会帮助商会更好的了解您"
+                android:lines="10"
+                android:padding="10dp"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_submit"
+            style="@style/big_button"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/bg_red_btn"
+            android:onClick="@{()->presenter.onClickAppJoin()}"
+            android:text="提交" />
+    </LinearLayout>
+</layout>

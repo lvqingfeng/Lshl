@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_koubei_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.lshl.ui.appliance.activity.KouBeiListActivity">
+        <include layout="@layout/app_layout_title"/>
+        <LinearLayout
+            android:background="@color/background_white"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <View
+                style="@style/TenDpGrayView"/>
+            <com.liaoinstan.springview.widget.SpringView
+                android:id="@+id/sp_koubei"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_koubei"
+                    android:background="@color/windowBackgroundColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </com.liaoinstan.springview.widget.SpringView>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

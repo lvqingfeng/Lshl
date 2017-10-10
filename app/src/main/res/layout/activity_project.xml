@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:id="@+id/activity_project"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.lshl.ui.appliance.activity.ProjectActivity">
+        <include layout="@layout/app_layout_title"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <View
+                style="@style/TenDpGrayView"/>
+            <com.liaoinstan.springview.widget.SpringView
+                android:id="@+id/spring_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_View"
+                    android:background="#fafafa"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </com.liaoinstan.springview.widget.SpringView>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

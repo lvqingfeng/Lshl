@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_contribution_type"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.lshl.ui.appliance.activity.ContributionTypeActivity">
+        <include layout="@layout/app_layout_title"/>
+        <LinearLayout
+            android:paddingTop="30dp"
+            android:paddingBottom="20dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:background="@mipmap/zijinliuxiang"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="24sp"
+                android:text="累计捐款额度"
+                android:textStyle="bold"
+                android:textColor="#fff"
+                android:padding="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/all"
+                android:textSize="24sp"
+                android:text="￥1200000"
+                android:textStyle="italic|bold"
+                android:padding="5dp"
+                android:textColor="#fff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:background="#fff"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/address"
+                android:gravity="center"
+                android:text="所在地:全部"
+                android:textColor="#333"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/shunxun"
+                android:gravity="center"
+                android:text="排列顺序:正序"
+                android:textColor="#333"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <Space
+            style="@style/TenDpGrayView" />
+        <com.liaoinstan.springview.widget.SpringView
+            android:id="@+id/spring_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:background="@color/windowBackgroundColor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </com.liaoinstan.springview.widget.SpringView>
+    </LinearLayout>
+</layout>

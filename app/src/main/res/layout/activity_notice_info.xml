@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:binding="http://schemas.android.com/apk/res-auto">
+
+    <data class="ActivityNoticeInfoBinding">
+
+        <variable
+            name="presenter"
+            type="com.lshl.ui.me.activity.NoticeInfoActivity.Presenter" />
+
+        <variable
+            name="noticeBean"
+            type="com.lshl.bean.NewNoticeBean.ListBean" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+        <include layout="@layout/app_layout_title" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:maxLines="1"
+            android:text="@{noticeBean.pi_title}"
+            android:textColor="@color/textBlackColor"
+            android:textSize="16sp" />
+
+        <View style="@style/gray_line" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:padding="5dp"
+            android:text='@{@string/indent+noticeBean.pi_info}'
+            android:textSize="12sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:padding="5dp"
+            android:textSize="12sp"
+            binding:timeFormat2="@{noticeBean.pi_addtime}" />
+
+        <Button
+            style="@style/big_button"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_blue_btn"
+            android:onClick="@{()->presenter.onClickGoInfo()}"
+            android:text="前往查看" />
+
+    </LinearLayout>
+
+</layout>

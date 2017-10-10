@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="pres"
+            type="com.lshl.ui.me.activity.BaseDataActivity.Presenter"/>
+    </data>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_base_data"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.lshl.ui.me.activity.BaseDataActivity">
+        <include layout="@layout/app_layout_title"/>
+            <LinearLayout
+                android:background="#fff"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <View
+                    style="@style/TenDpGrayView"/>
+                <LinearLayout
+                    android:padding="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        style="@style/BaseDataTextView"
+                        android:text="姓       名" />
+                    <EditText
+                        android:paddingLeft="15dp"
+                        android:id="@+id/name"
+                        android:background="@null"
+                        android:maxLength="4"
+                        android:minEms="2"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <View
+                    style="@style/gray_line"/>
+                <LinearLayout
+                    android:onClick="@{()->pres.sex()}"
+                    android:padding="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        style="@style/BaseDataTextView"
+                        android:text="性       别"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:paddingLeft="15dp"
+                        android:id="@+id/sex"
+                        android:textColor="#333"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <View
+                    style="@style/OneDpGrayView"/>
+                <LinearLayout
+                    android:onClick="@{()->pres.time()}"
+                    android:padding="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        style="@style/BaseDataTextView"
+                        android:text="出生日期"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:paddingLeft="15dp"
+                        android:id="@+id/time"
+                        android:textColor="#333"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <View
+                    style="@style/TenDpGrayView"/>
+
+                <LinearLayout
+                    android:onClick="@{()->pres.useAddress()}"
+                    android:padding="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        style="@style/BaseDataTextView"
+                        android:text="老家地址"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:paddingLeft="15dp"
+                        android:id="@+id/use_address"
+                        android:textColor="#333"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <View
+                    style="@style/OneDpGrayView"/>
+                <LinearLayout
+                    android:onClick="@{()->pres.nowAddress()}"
+                    android:padding="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        style="@style/BaseDataTextView"
+                        android:text="常驻地址"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:paddingLeft="15dp"
+                        android:id="@+id/now_address"
+                        android:textColor="#333"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <View
+                   style="@style/OneDpGrayView"/>
+                <LinearLayout
+                    android:onClick="@{()->pres.introduce()}"
+                    android:padding="5dp"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        style="@style/BaseDataTextView"
+                        android:text="个人简介"
+                        android:paddingRight="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_marginLeft="15dp"
+                        android:layout_width="match_parent"
+                        android:background="@drawable/bg_solid_gray"
+                        android:layout_height="80dp"
+                        android:id="@+id/introduce" />
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:background="#fafafa"
+                    android:layout_height="10dp"/>
+                <LinearLayout
+                    android:onClick="@{()->pres.faren()}"
+                    android:padding="5dp"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        style="@style/BaseDataTextView"
+                        android:text="是否企业法人"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/faren"
+                        style="@style/BaseDataTextView"
+                        android:layout_marginLeft="15dp"
+                        android:layout_weight="1"
+                        android:text="否"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/windowBackgroundColor">
+                    <Button
+                        android:onClick="@{()->pres.commit()}"
+                        android:text="保     存"
+                        style="@style/red_button" />
+                </LinearLayout>
+            </LinearLayout>
+
+    </LinearLayout>
+</layout>

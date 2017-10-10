@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:cb="http://schemas.android.com/apk/res-auto">
+
+    <data class="ProjectVoteTypeBinding">
+
+
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:padding="8dp">
+
+
+        <TextView
+            android:id="@+id/tv_project_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:textColor="@color/textBlackColor" />
+
+        <LinearLayout
+            android:id="@+id/ll_project_progress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="25dp"
+            android:layout_toEndOf="@id/tv_project_status"
+            android:layout_toRightOf="@id/tv_project_status"
+            android:background="@drawable/bg_stroke_blue"
+            android:gravity="right"
+            android:orientation="vertical"
+            android:padding="6dp">
+
+            <com.lshl.widget.CBProgressBar
+                android:id="@+id/cb_progress_bar"
+                android:layout_width="115dp"
+                android:layout_height="115dp"
+                cb:orientation="circle"
+                cb:percent_text_color="@color/textBlackColor"
+                cb:percent_text_size="22sp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="185dp"
+            android:layout_marginRight="185dp"
+            android:background="@android:color/white"
+            android:orientation="vertical"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_gray_btn"
+                android:gravity="center_horizontal"
+                android:padding="10dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_gray_btn"
+                android:gravity="center_horizontal"
+                android:padding="10dp" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_vector_right_go" />
+    </RelativeLayout>
+</layout>
